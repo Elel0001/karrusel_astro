@@ -2,7 +2,7 @@
 const { type, size } = Astro.props;
 ---
 
-<button class={type + " " + size}> Knap </button>
+<button class={type + " " + size}> <slot /></button>
 
 <style>
   button {
@@ -15,11 +15,14 @@ const { type, size } = Astro.props;
     border: none;
     border-radius: 6rem;
 
-    padding: var(--spacing_4) var(--spacing_7);
+    padding: var(--spacing_4) var(--spacing_8);
   }
 
   button:hover {
-    font-size: 1.375rem;
+    font-size: 1.3rem;
+  }
+  button:visited {
+    color: var(--primary_50);
   }
 
   /* TYPE */
@@ -37,6 +40,6 @@ const { type, size } = Astro.props;
   /* SIZE */
   .ticket {
     font-size: 0.75rem;
-    padding:;
+    padding: var(--spacing_3) var(--spacing_7);
   }
 </style>
