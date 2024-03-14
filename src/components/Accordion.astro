@@ -1,0 +1,102 @@
+---
+const {question_1, question_2, question_3, answer_1, answer_2, answer_3} = Astro.props;
+---
+<div class="accordion_item_1">
+    <div class="accordion_header_1">{question_1}<img class="arrow"src="arrow.svg" alt="arrow icon"></div>
+    <div class="accordion_content_1">
+       <p>{answer_1}</p>
+    </div>
+</div>
+<div class="accordion_item_2">
+    <div class="accordion_header_2">{question_2}<img class="arrow"src="arrow.svg" alt="arrow icon"></div>
+    <div class="accordion_content_2">
+       <p>{answer_2}</p>
+    </div>
+</div>
+<div class="accordion_item_3">
+    <div class="accordion_header_3">{question_3}<img class="arrow"src="arrow.svg" alt="arrow icon"></div>
+    <div class="accordion_content_3">
+       <p>{answer_3}</p>
+    </div>
+</div>
+
+
+
+ <style>
+/* styling af accordion */
+.accordion_header_1, .accordion_header_2, .accordion_header_3, .accordion_content_1, .accordion_content_2, .accordion_content_3{
+font-family: var(--font_body) ;
+font-size: 1rem;
+color: var(--primary_50);
+border-bottom: 2px solid var(--primary_50);
+padding: var(--spacing_3);
+
+}
+
+/* længde og placering */
+.accordion_header_1, .accordion_header_2, .accordion_header_3{
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+cursor: pointer;
+  width: 263px;
+}
+.accordion_content_1, .accordion_content_2, .accordion_content_3 {
+display: none;
+  width: 263px;
+
+}
+
+/* Pil styling og rotering */
+.arrow {
+    width: 10%;
+    transition: transform 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+
+@media (min-width: 800px){
+   .accordion_header_1, .accordion_header_2, .accordion_header_3, .accordion_content_1, .accordion_content_2, .accordion_content_3{
+    width: 504px;
+   }
+    .arrow{
+width: 5%;
+}
+}
+</style>
+
+
+ <script>
+// Find alle accordion-elementer
+const accordionItems = document.querySelectorAll(".accordion_item_1, .accordion_item_2, .accordion_item_3");
+
+// Tilføj klikhåndterer til hver accordion-item
+accordionItems.forEach((item) => {
+    const header = item.querySelector(".accordion_header_1, .accordion_header_2, .accordion_header_3");
+    const arrow = item.querySelector(".arrow");
+
+    header.addEventListener("click", () => {
+        // Skjul alle accordion-indholdselementer
+        accordionItems.forEach((accItem) => {
+            const content = accItem.querySelector(".accordion_content_1, .accordion_content_2, .accordion_content_3") as HTMLElement;
+            if (accItem !== item) {
+                content.style.display = "none";
+                accItem.querySelector(".arrow")?.classList.remove("rotate"); // Fjern rotation på andre pile
+            }
+        });
+
+        // Skift visning af det aktuelle accordion-indhold
+        const content = item.querySelector(".accordion_content_1, .accordion_content_2, .accordion_content_3") as HTMLElement;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+
+        // Roter pilikonet
+        arrow.classList.toggle("rotate");
+    });
+});
+
+
+</script>
+                  

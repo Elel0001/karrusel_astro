@@ -2,12 +2,16 @@
 import "../styles/general.css"
 import Link from "../components/Link.astro"
 import MainLayout from "../layouts/MainLayout.astro"
+import Accordion from "../components/Accordion.astro"
 ---
 
 <MainLayout>
 <Link variant="breadcrumb" text="breadcrumb text"/>
 <Link variant="main_navigation" text="menu text"/>
+<Accordion question_1="Where do I buy my tickets?" answer_1="You can buy your tickets at Ticketmaster" question_2="Can I charge my phone?" answer_2="Yes, we do have charging station around the festival."></Accordion>
 </MainLayout>
 <style>
     body{background-color: black ; }
 </style>
+
+ 
