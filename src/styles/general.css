@@ -1,0 +1,132 @@
+/************* VARIABLER *************/
+
+html {
+  --primary_50: #f6f5f5;
+  --primary_100: #e8e6e5;
+  --primary_200: #d3d1ce;
+  --primary_300: #b4b1ac;
+  --primary_400: #8d8983;
+  --primary_500: #5b554d;
+  --primary_600: #4d4842;
+  --primary_700: #423e39;
+  --primary_800: #302d29;
+  --primary_900: #272421;
+
+  --secondary_50: #fdebe6;
+  --secondary_100: #f9c1b0;
+  --secondary_200: #f7a38a;
+  --secondary_300: #f37950;
+  --secondary_400: #f15f33;
+  --secondary_500: #ed3700;
+  --secondary_600: #d83200;
+  --secondary_700: #a82700;
+  --secondary_800: #821e00;
+  --secondary_900: #641700;
+
+  --accent_50: #ecf1ff;
+  --accent_100: #dde6ff;
+  --accent_200: #c2d0ff;
+  --accent_300: #9cb0ff;
+  --accent_400: #7585ff;
+  --accent_500: #434bff;
+  --accent_600: #3d36f5;
+  --accent_700: #332ad8;
+  --accent_800: #2a25ae;
+  --accent_900: #272689;
+
+  --yellow_100: #ffe8a3;
+  --yellow_600: #ff9900;
+
+  --font_display: "Amarante", sans-serif;
+  --font_heading: "Rubik mono one", monospace;
+  --font_body: "Inter", sans-serif;
+
+  --spacing_1: 0.25rem;
+  --spacing_2: 0.5rem;
+  --spacing_3: 0.75rem;
+  --spacing_4: 1rem;
+  --spacing_5: 1.25rem;
+  --spacing_6: 1.5rem;
+  --spacing_7: 2rem;
+  --spacing_8: 2.5rem;
+  --spacing_9: 3rem;
+  --spacing_10: 4rem;
+  --spacing_11: 6rem;
+  --spacing_12: 8rem;
+
+  --radius_small: 0.5rem;
+  --radius_medium: 0.75rem;
+  --radius_large: 1rem;
+}
+
+/************* RESET *************/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/************* TEKST STYLING *************/
+
+h1 {
+  font-family: var(--font_heading);
+  font-size: 3rem;
+  color: var(--primary_50);
+}
+h2 {
+  font-family: var(--font_heading);
+  font-size: 2rem;
+  color: var(--primary_50);
+}
+h3 {
+  font-family: var(--font_display);
+  font-size: 1.75rem;
+  color: var(--primary_50);
+}
+h4 {
+  font-family: var(--font_display);
+  font-size: 1.375rem;
+  color: var(--primary_50);
+}
+h5 {
+  font-family: var(--font_display);
+  font-size: 1.125rem;
+  color: var(--primary_50);
+}
+p {
+  font-family: var(--font_body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 150%;
+  max-width: 65ch;
+  color: var(--primary_50);
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 2.5rem;
+  }
+  h5 {
+    font-size: 2.25rem;
+  }
+}
