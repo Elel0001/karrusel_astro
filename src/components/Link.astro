@@ -1,40 +1,38 @@
 ---
-const {variant, text} = Astro.props;
+const { variant, link } = Astro.props;
 ---
-<a href="" class={variant}>{text}</a>
 
+<a href={link} class={variant}><slot /></a>
 
 <style>
-.main_navigation{
+  .main {
     font-family: var(--font_display);
     font-size: 1.25rem;
     color: var(--primary_50);
     text-decoration: none;
     text-transform: uppercase;
-}
-.main_navigation:hover{
-   filter: drop-shadow(0 0 4px var(--primary_50)); 
-}
-.main_navigation:active{
-   text-decoration: underline;
-   filter: drop-shadow(0 0 4px var(--primary_50)); 
-}
+  }
+  .main:hover {
+    filter: drop-shadow(0 0 4px var(--primary_50));
+  }
+  .main:active {
+    text-decoration: underline;
+    filter: drop-shadow(0 0 4px var(--primary_50));
+  }
 
+  .breadcrumb {
+    font-family: var(--font_display);
+    font-size: 1rem;
+    color: var(--primary_50);
+    text-decoration: none;
+  }
+  .breadcrumb:hover {
+    filter: drop-shadow(0 0 4px var(--primary_50));
+  }
 
-.breadcrumb{
-font-family: var(--font_display);
-font-size: 1rem;
-color: var(--primary_50);
- text-decoration: none;
-}
-.breadcrumb:hover{
-filter: drop-shadow(0 0 4px var(--primary_50));
-}
-
-@media (min-width: 800px){
-   .breadcrumb{
-font-size: 1.25rem;
-}
-}
-
+  @media (min-width: 800px) {
+    .breadcrumb {
+      font-size: 1.25rem;
+    }
+  }
 </style>
