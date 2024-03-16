@@ -105,6 +105,12 @@ h5 {
   font-size: 1.125rem;
   color: var(--primary_50);
 }
+h6 {
+  font-family: var(--font_body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary_50);
+}
 p {
   font-family: var(--font_body);
   font-size: 0.75rem;

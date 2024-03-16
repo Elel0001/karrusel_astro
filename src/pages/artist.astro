@@ -1,0 +1,95 @@
+---
+import "../styles/general.css";
+
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+
+const { name, day, time, stage, song, about } = Astro.props;
+---
+
+<MainLayout>
+  <section class="flex_col">
+    <!-- <Breadcrumb /> -->
+    <article class="info flex_col">
+      <h1>{name}</h1>
+      <div class="flex_row">
+        <p>{day}</p>
+        <img src="svg/star.svg" alt="star symbol" class="star" />
+        <p>{time}</p>
+        <img src="svg/star.svg" alt="star symbol" class="star" />
+        <p>{stage}</p>
+      </div>
+    </article>
+
+    <article class="play flex_col">
+      <img src="img/album.png" alt="Picture of artist" />
+      <h5>{song}</h5>
+      <!-- Player -->
+    </article>
+
+    <article class="about flex_col">
+      <h6>About</h6>
+      <p>{about}</p>
+    </article>
+
+    <article class="social flex_row">
+      <img src="svg/spotify.svg" alt="spotify icon" class="icon" />
+      <img src="svg/youtube.svg" alt="youtube icon" class="icon" />
+      <img src="svg/instagram.svg" alt="intagram icon" class="icon" />
+    </article>
+  </section>
+</MainLayout>
+
+<style>
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    gap: var(--spacing_8);
+  }
+
+  div {
+    gap: var(--spacing_5);
+    align-items: center;
+  }
+
+  .info {
+    gap: var(--spacing_6);
+  }
+
+  .info p {
+    font-size: 1.25rem;
+  }
+
+  .star {
+    width: 15px;
+  }
+
+  .play {
+    gap: var(--spacing_6);
+    align-items: center;
+  }
+
+  .about {
+    gap: var(--spacing_4);
+  }
+
+  .social {
+    gap: var(--spacing_4);
+    align-self: flex-end;
+  }
+
+  .icon {
+    width: 30px;
+  }
+  @media (min-width: 800px) {
+    /*  */
+  }
+</style>
