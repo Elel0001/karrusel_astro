@@ -7,7 +7,7 @@ const { heading, text, button } = Astro.props;
 <article>
   <div>
     <h4>{heading}</h4>
-    <p>{text}</p>
+    <slot />
   </div>
   <Button type="secondary" link="">{button}</Button>
 </article>

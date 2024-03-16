@@ -4,6 +4,7 @@ import "../styles/general.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Content from "../components/Content.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Sif tester">
@@ -13,14 +14,15 @@ import Content from "../components/Content.astro";
   <article>
     <Content button="Content" heading="Hejsa" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius ea ut, doloribus facilis rem, assumenda vel mollitia quae, provident illum recusandae fuga sequi ratione repellat! Deserunt, rerum! Laboriosam, quam." />
   </article>
-
-  <style>
-    article {
-      background-color: black;
-      padding: var(--spacing_8);
-      border-radius: var(--radius_medium);
-      width: fit-content;
-      margin: 2rem;
-    }
-  </style>
+  <Card heading="Heading" button="Click here" />
 </MainLayout>
+
+<style>
+  article {
+    background-color: black;
+    padding: var(--spacing_8);
+    border-radius: var(--radius_medium);
+    width: fit-content;
+    margin: 2rem;
+  }
+</style>

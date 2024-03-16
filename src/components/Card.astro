@@ -1,0 +1,32 @@
+---
+import Content from "./Content.astro";
+import Accordion from "./Accordion.astro";
+
+const { heading, button } = Astro.props;
+---
+
+<article>
+  <Content heading={heading} button={button}> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt nihil quod vitae dicta nemo ratione ipsa fuga odit quo, harum explicabo magnam hic, quas consequuntur sed non velit qui magni.</p></Content>
+  <Accordion question_1="Where do I buy my tickets?" answer_1="You can buy your tickets at Ticketmaster" question_2="Can I charge my phone?" answer_2="Yes, we do have charging station around the festival." />
+</article>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing_7);
+
+    background-color: black;
+    border-radius: var(--radius_medium);
+    padding: var(--spacing_5);
+
+    margin: 2rem;
+  }
+  @media (min-width: 800px) {
+    article {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: var(--spacing_9);
+    }
+  }
+</style>
