@@ -1,13 +1,13 @@
 ---
-const { type, size } = Astro.props;
+const { type, size, link } = Astro.props;
 ---
 
-<button class={type + " " + size}> <slot /></button>
+<button class={type + " " + size} href={link}> <slot /></button>
 
 <style>
   button {
     font-family: var(--font_body);
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--primary_50);
     filter: drop-shadow(0px 0px 10px var(--accent_600));
@@ -16,10 +16,11 @@ const { type, size } = Astro.props;
     border-radius: 6rem;
 
     padding: var(--spacing_4) var(--spacing_8);
+    width: fit-content;
   }
 
   button:hover {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   button:visited {
     color: var(--primary_50);
@@ -41,5 +42,11 @@ const { type, size } = Astro.props;
   .ticket {
     font-size: 0.75rem;
     padding: var(--spacing_3) var(--spacing_7);
+  }
+
+  @media (min-width: 800px) {
+    button {
+      font-size: 1.125rem;
+    }
   }
 </style>
