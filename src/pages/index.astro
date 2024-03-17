@@ -1,7 +1,58 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout>
-	
+  <section>
+    <img src="img/hero.jpeg" alt="hero image" />
+    <div class="flex_hero">
+      <h1>Karrusel Festival</h1>
+      <img class="icon" src="svg/star.svg" alt="star icon" />
+      <h2>22.-24. Aug 2024</h2>
+      <img class="icon" src="svg/star.svg" alt="star icon" />
+    </div>
+  </section>
+  <section>
+    <h3>3 days</h3>
+    <h1>House, disco & techno</h1>
+    <h3>In the woods</h3>
+    <Button variant="secondary" link="/#" />
+  </section>
+  <section></section>
+  <section></section>
 </MainLayout>
+
+<style>
+  .flex_hero {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    gap:;
+    animation-name: fald_kf;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+  }
+  @keyframes fald_kf {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  h1 {
+    font-family: var(--font_display);
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+
+  h2 {
+    font-family: var(--font_display);
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+
+  .icon {
+    width: 40px;
+  }
+</style>
