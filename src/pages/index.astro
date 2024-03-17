@@ -1,15 +1,16 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout>
   <section>
-    <img src="img/hero.jpeg" alt="hero image" />
+    <img class="hero_img" src="img/hero.jpeg" alt="hero image" />
     <div class="flex_hero">
-      <h1>Karrusel Festival</h1>
+      <h1 class="display_h1">Karrusel Festival</h1>
       <img class="icon" src="svg/star.svg" alt="star icon" />
-      <h2>22.-24. Aug 2024</h2>
+      <h2 class="display_h2">22.-24. Aug 2024</h2>
       <img class="icon" src="svg/star.svg" alt="star icon" />
     </div>
   </section>
@@ -20,16 +21,24 @@ import Button from "../components/Button.astro";
     <Button variant="secondary" link="/#" />
   </section>
   <section></section>
-  <section></section>
+  <section>
+    <Card />
+  </section>
 </MainLayout>
 
 <style>
+  section {
+    padding-bottom: var(--spacing_11);
+  }
+  .hero_img {
+    position: relative;
+  }
   .flex_hero {
     display: flex;
     flex-direction: row;
     position: absolute;
-    gap:;
-    animation-name: fald_kf;
+    gap: var(--spacing_10);
+    animation-name: fald;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-duration: 10s;
@@ -40,13 +49,13 @@ import Button from "../components/Button.astro";
     }
   }
 
-  h1 {
+  .display_h1 {
     font-family: var(--font_display);
     font-size: 3rem;
     white-space: nowrap;
   }
 
-  h2 {
+  .display_h2 {
     font-family: var(--font_display);
     font-size: 2rem;
     white-space: nowrap;
