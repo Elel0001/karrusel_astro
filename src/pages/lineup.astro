@@ -1,0 +1,36 @@
+---
+import "../styles/general.css";
+
+import MainLayout from "../layouts/MainLayout.astro";
+import CardArtist from "../components/CardArtist.astro";
+---
+
+<MainLayout>
+  <section>
+    <!-- Poster -->
+  </section>
+
+  <section>
+    <h2>Artists</h2>
+    <div>
+      <CardArtist />
+      <CardArtist />
+      <CardArtist />
+      <CardArtist />
+    </div>
+
+    <section>
+      <!-- Table -->
+    </section>
+  </section>
+
+  <style>
+    div {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: var(--spacing_4);
+
+      margin-top: var(--spacing_4);
+    }
+  </style>
+</MainLayout>
