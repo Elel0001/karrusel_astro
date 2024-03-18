@@ -10,7 +10,7 @@ const { question, answer } = Astro.props;
 </div>
 
 <style>
-  /* længde og placering */
+  /* Accordion header - styling */
   .accordion_header {
     display: flex;
     justify-content: space-between;
@@ -22,8 +22,11 @@ const { question, answer } = Astro.props;
     border-bottom: 2px solid var(--primary_50);
     padding: var(--spacing_3);
   }
+
+  /* Content - vises ikke */
   .accordion_content {
     display: none;
+    padding: var(--spacing_3);
   }
 
   /* Pil styling og rotering */
