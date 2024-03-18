@@ -1,0 +1,114 @@
+---
+import "../../styles/general.css";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZnVyaGRoc2tjeGZsYnhzdHpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDMzNTMsImV4cCI6MjAyNjA3OTM1M30.LOhTm5mG10QgwCONoiEr4awaIvHkbSl4G1wxOgPX4Mk",
+    },
+  }).then((res) => res.json());
+
+  return data.map((artist) => {
+    return {
+      // Det første 'slug' henviser til det slug, som er i mit filnavn (som er [slug].astro)
+      // Det næste 'slug' henviser til en kolonne i databasen
+      params: { slug: artist.slug },
+      props: { myData: artist },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<MainLayout title={myData.name}>
+  <section class="flex_col">
+    <Breadcrumb link={myData.slug}>{myData.name}</Breadcrumb>
+    <article class="info flex_col">
+      <h1>{myData.name}</h1>
+      <div class="flex_row">
+        <p>{myData.day}</p>
+        <img src="/svg/star.svg" alt="star symbol" class="star" />
+        <p>{myData.time}</p>
+        <img src="/svg/star.svg" alt="star symbol" class="star" />
+        <p>{myData.stage}</p>
+      </div>
+    </article>
+
+    <article class="play flex_col">
+      <img src="/img/album.png" alt="Picture of artist" />
+      <h5>{myData.song}</h5>
+      <img src="/img/player.svg" alt="Picture of artist" />
+    </article>
+
+    <article class="about flex_col">
+      <h6>About</h6>
+      <p>{myData.about}</p>
+    </article>
+
+    <article class="social flex_row">
+      <img src="/svg/spotify.svg" alt="spotify icon" class="icon" />
+      <img src="/svg/youtube.svg" alt="youtube icon" class="icon" />
+      <img src="/svg/instagram.svg" alt="intagram icon" class="icon" />
+    </article>
+  </section>
+</MainLayout>
+<style>
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    gap: var(--spacing_8);
+  }
+
+  div {
+    gap: var(--spacing_5);
+    align-items: center;
+  }
+
+  .info {
+    gap: var(--spacing_6);
+  }
+
+  .info p {
+    font-size: 1.25rem;
+  }
+
+  .star {
+    width: 15px;
+  }
+
+  .play {
+    gap: var(--spacing_6);
+    align-items: center;
+  }
+  .play img {
+    border-radius: var(--radius_medium);
+  }
+
+  .about {
+    gap: var(--spacing_4);
+  }
+
+  .social {
+    gap: var(--spacing_4);
+    align-self: flex-end;
+  }
+
+  .icon {
+    width: 30px;
+  }
+  @media (min-width: 800px) {
+    /*  */
+  }
+</style>

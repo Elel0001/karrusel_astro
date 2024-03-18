@@ -1,160 +1,159 @@
 ---
 import Link from "../components/Link.astro";
-const {tickets, lineup, faq, about} = Astro.props
+const { tickets, lineup, faq, about } = Astro.props;
 ---
 
 <header>
-    <a href="index.astro">
-        <img class="logo" src="img/header_logo.svg" alt="logo">
-    </a>
-    <nav>
-      <ul class="menu">
-        <li><Link link="/#" variant="main" page={tickets}>Tickets</Link></li>
-        <li><Link link="lineup" variant="main" page={lineup}>Line up</Link></li>
-        <li><Link link="/#" variant="main" page={faq}>FAQ</Link></li>
-        <li><Link link="/#" variant="main" page={about}>About</Link></li>
-      </ul>
-      <div class="burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </nav>
+  <a href="index.astro">
+    <img class="logo" src="/img/header_logo.svg" alt="logo" />
+  </a>
+  <nav>
+    <ul class="menu">
+      <li><Link link="/#" variant="main" page={tickets}>Tickets</Link></li>
+      <li><Link link="lineup" variant="main" page={lineup}>Line up</Link></li>
+      <li><Link link="/#" variant="main" page={faq}>FAQ</Link></li>
+      <li><Link link="/#" variant="main" page={about}>About</Link></li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
 </header>
 
-
 <style>
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing_4);
-  background-color: var(--secondary_900);
-}
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing_4);
+    background-color: var(--secondary_900);
+  }
 
-.logo {
-  width: 100px;
-}
+  .logo {
+    width: 100px;
+  }
 
-nav {
-  display: flex;
-  align-items: center;
-}
+  nav {
+    display: flex;
+    align-items: center;
+  }
 
-.menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  margin-right: var(--spacing_5);
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
-.menu a {
-  display: block;
-  /* padding: var(--spacing_4); */
-  /* color: var(--primary_50); */
-  /* text-decoration: none; */
-  transition: color 0.3s;
-  text-align: end;
-}
-
-.menu a:hover {
-  /* color: #f00; */
-}
-
-.burger {
-  width: 30px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.burger .line {
-  width: 100%;
-  height: 2px;
-  background-color: var(--primary_50);
-  margin-bottom: 5px;
-  transition: 0.2s linear;
-  border-radius: var(--radius_small);
-}
-.burger {
-  display: none;
-}
-
-@media (min-width: 800px){
-    header{
-        padding: var(--spacing_4) var(--spacing_12);
-    }
-    .logo {
-    width: 130px;
-}
-}
-
-@media (max-width: 800px) {
   .menu {
-    display: none;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    margin-right: var(--spacing_5);
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
+
+  .menu a {
+    display: block;
+    /* padding: var(--spacing_4); */
+    /* color: var(--primary_50); */
+    /* text-decoration: none; */
+    transition: color 0.3s;
+    text-align: end;
+  }
+
+  .menu a:hover {
+    /* color: #f00; */
+  }
+
+  .burger {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary_50);
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+    border-radius: var(--radius_small);
   }
   .burger {
-    display: block;
-  }
-  .burger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    transition: 0.2s linear;
+    display: none;
   }
 
-  .burger.active .line:nth-child(2) {
-    opacity: 0;
-    transition: 0.15s linear;
+  @media (min-width: 800px) {
+    header {
+      padding: var(--spacing_4) var(--spacing_12);
+    }
+    .logo {
+      width: 130px;
+    }
   }
 
-  .burger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    transition: 0.2s linear;
-  }
+  @media (max-width: 800px) {
+    .menu {
+      display: none;
+    }
+    .burger {
+      display: block;
+    }
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
 
-  nav.active .menu {
-    background-color: var(--secondary_900);
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-  }
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
 
-  nav.active .menu li {
-    margin: 10px 20px;
-  }
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
 
-  nav.active .menu a {
-    font-size: 24px;
+    nav.active .menu {
+      background-color: var(--secondary_900);
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+
+    nav.active .menu a {
+      font-size: 24px;
+    }
   }
-}
 </style>
 
 <script>
-const burger = document.querySelector(".burger");
-const nav = document.querySelector("nav");
-const menu = document.querySelector(".menu");
-const links = document.querySelectorAll(".menu li a");
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector("nav");
+  const menu = document.querySelector(".menu");
+  const links = document.querySelectorAll(".menu li a");
 
-burger.addEventListener("click", () => {
-  burger.classList.toggle("active");
-  nav.classList.toggle("active");
-});
-
-links.forEach((link) => {
-  link.addEventListener("click", () => {
-    burger.classList.remove("active");
-    nav.classList.remove("active");
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
   });
-});
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      nav.classList.remove("active");
+    });
+  });
 </script>
