@@ -3,34 +3,48 @@ import "../styles/general.css";
 
 import MainLayout from "../layouts/MainLayout.astro";
 import CardArtist from "../components/CardArtist.astro";
+import Poster from "../components/Poster.astro";
+
+const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZnVyaGRoc2tjeGZsYnhzdHpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDMzNTMsImV4cCI6MjAyNjA3OTM1M30.LOhTm5mG10QgwCONoiEr4awaIvHkbSl4G1wxOgPX4Mk",
+  },
+}).then((res) => res.json());
 ---
 
 <MainLayout>
-  <section>
-    <!-- Poster -->
+  <section class="poster">
+    <Poster />
   </section>
 
-  <section>
+  <section class="artists">
     <h2>Artists</h2>
     <div>
-      <CardArtist />
-      <CardArtist />
-      <CardArtist />
-      <CardArtist />
+      {
+        data.map((artist) => {
+          return <CardArtist data={artist} />;
+        })
+      }
     </div>
-
-    <section>
-      <!-- Table -->
-    </section>
   </section>
 
-  <style>
-    div {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-      gap: var(--spacing_4);
-
-      margin-top: var(--spacing_4);
-    }
-  </style>
+  <section class="table">
+    <!-- Table -->
+  </section>
 </MainLayout>
+
+<style>
+  .poster {
+    background: url(), var(--secondary_900);
+    background-repeat: no-repeat, no-repeat;
+    margin: var(--spacing_4);
+  }
+  div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing_4);
+
+    margin-top: var(--spacing_4);
+  }
+</style>
