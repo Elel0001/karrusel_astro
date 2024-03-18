@@ -1,26 +1,53 @@
 ---
+import "../styles/general.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
+import Poster from "../components/Poster.astro";
 ---
 
 <MainLayout>
   <section>
     <img class="hero_img" src="img/hero.jpeg" alt="hero image" />
-    <div class="flex_hero">
-      <h1 class="display_h1">Karrusel Festival</h1>
-      <img class="icon" src="svg/star.svg" alt="star icon" />
-      <h2 class="display_h2">22.-24. Aug 2024</h2>
-      <img class="icon" src="svg/star.svg" alt="star icon" />
+    <div class="container">
+      <div class="list">
+        <div class="item">
+          <span class="item_txt">Karrusel Festival</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
+          <span class="date">22.-24. Aug 2024</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
+          <span class="item_txt">Karrusel Festival</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
+          <span class="date">22.-24. Aug 2024</span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="list">
+          <div class="item">
+            <span class="item_txt">Karrusel Festival</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+            <span class="date">22.-24. Aug 2024</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+            <span class="item_txt">Karrusel Festival</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+            <span class="date">22.-24. Aug 2024</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+          </div>
+        </div>
+      </div>
     </div>
+    <Button variant="primary" link="/#" />
+  </section>
+
+  <section class="grid_1-1-1-1">
+    <h3 class="txt_left">3 days</h3>
+    <h1>House, disco & techno</h1>
+    <h3 class="txt_right">In the woods</h3>
+    <Button class="button" variant="secondary" link="/#" />
   </section>
   <section>
-    <h3>3 days</h3>
-    <h1>House, disco & techno</h1>
-    <h3>In the woods</h3>
-    <Button variant="secondary" link="/#" />
+    <Poster />
   </section>
-  <section></section>
   <section>
     <Card />
   </section>
@@ -30,38 +57,123 @@ import Card from "../components/Card.astro";
   section {
     padding-bottom: var(--spacing_11);
   }
+
+  /******** Hero section ********/
+  /* Hero billede placering */
   .hero_img {
     position: relative;
   }
-  .flex_hero {
+
+  /* Text der looper - container */
+  .container {
     display: flex;
-    flex-direction: row;
-    position: absolute;
-    gap: var(--spacing_10);
-    animation-name: fald;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
+    white-space: nowrap;
+    overflow: hidden;
+    gap: var(--spacing_11);
   }
-  @keyframes fald_kf {
+
+  /* Animation på list indhold */
+  .list {
+    display: flex;
+    align-items: top;
+    -webkit-animation: loop 20s infinite linear;
+    animation: loop 20s infinite linear;
+  }
+
+  @keyframes loop {
     100% {
+      -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
     }
   }
 
-  .display_h1 {
+  /* Styling af loop indhold*/
+  .item_txt,
+  .star,
+  .date {
+  }
+  .item_txt,
+  .date {
     font-family: var(--font_display);
-    font-size: 3rem;
-    white-space: nowrap;
+    color: var(--primary_50);
   }
 
-  .display_h2 {
-    font-family: var(--font_display);
-    font-size: 2rem;
-    white-space: nowrap;
+  .item_txt {
+    font-size: 3.125rem;
   }
-
-  .icon {
+  .date {
+    font-size: 1.875rem;
+  }
+  .star {
     width: 40px;
+  }
+
+  /************* Section 2 ***********/
+
+  /* Grid på section */
+  .grid_1-1-1-1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: var(--spacing_10);
+    gap: var(--spacing_5);
+  }
+
+  /* 3 days - placering */
+  .txt_left {
+    display: grid;
+    grid-column: 1 / span 2;
+    place-content: end center;
+  }
+
+  /* House, disco og techno - placering */
+  h1 {
+    text-align: center;
+    padding-top: var(--spacing_3);
+    padding-bottom: var(--spacing_3);
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
+
+  /* in the woods - placering */
+  .txt_right {
+    display: grid;
+    grid-column: 3 / span 2;
+    place-content: start center;
+    grid-row: 3;
+    white-space: nowrap;
+  }
+
+  /* Button - placering */
+  .button {
+    display: grid;
+    grid-column: 2 / span 2;
+    place-self: start center;
+  }
+
+  /* Section 2 i desk version */
+  @media (min-width: 800px) {
+    .grid_1-1-1-1 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      padding-bottom: var(--spacing_10);
+    }
+    .txt_left {
+      display: grid;
+      grid-column: 3 / span 2;
+      place-content: end center;
+    }
+    h1 {
+      text-align: center;
+      padding-top: var(--spacing_3);
+      padding-bottom: var(--spacing_3);
+      grid-column: 1 / span 12;
+      grid-row: 2;
+    }
+    .txt_right {
+      display: grid;
+      grid-column: 7 / span 4;
+      place-content: start center;
+      grid-row: 3;
+    }
   }
 </style>
