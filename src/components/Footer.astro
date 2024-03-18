@@ -1,105 +1,103 @@
 ---
+
 ---
 
 <footer>
-    <section class="footer">
-      <div class="footer_col_karrusel">
-        <h6>Karrusel Festival<h6>
-        <p>Organised by Nus Nus <br />info@nusnus.dk</p>    
-      </div>
+  <section class="footer">
+    <div class="footer_col_karrusel">
+      <h6>
+        Karrusel Festival<h6>
+          <p>Organised by Nus Nus <br />info@nusnus.dk</p>
+        </h6>
 
-      <div>
-        <img src="img/footer_logo.svg" alt="logo" class="footer_logo" />
-      </div>
-
-      <div class="social_flex">
-        <p>Follow us</p>
-        <div class="social_icon_flex">
-          <a href="https://www.instagram.com/">
-            <img src="img/instagram.svg" alt="Instagram Logo" class="icon_social" />
-          </a>
-          <a href="https://www.facebook.com/">
-            <img src="img/facebook.svg" alt="Facebook Logo" class="icon_social" />
-          </a>
+        <div>
+          <img src="/img/footer_logo.svg" alt="logo" class="footer_logo" />
         </div>
-      </div>
-    </section>
-  </footer>
 
-  
-  
-  
-  <style>
+        <div class="social_flex">
+          <p>Follow us</p>
+          <div class="social_icon_flex">
+            <a href="https://www.instagram.com/">
+              <img src="/img/instagram.svg" alt="Instagram Logo" class="icon_social" />
+            </a>
+            <a href="https://www.facebook.com/">
+              <img src="/img/facebook.svg" alt="Facebook Logo" class="icon_social" />
+            </a>
+          </div>
+        </div>
+      </h6>
+    </div>
 
-/* H5 er for stort i general i web, så derfor har jeg lavet en H6 som er den samme som H5 i mobil */
-    h6 {
-  font-family: var(--font_display);
-  font-size: 1.125rem;
-  color: var(--primary_50);
-}
-  footer {
-  background-color: var(--secondary_900);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing_7);
-  padding: var(--spacing_4) 0 var(--spacing_4) var(--spacing_4);
-  
-}
+    <style>
+      /* H5 er for stort i general i web, så derfor har jeg lavet en H6 som er den samme som H5 i mobil */
+      h6 {
+        font-family: var(--font_display);
+        font-size: 1.125rem;
+        color: var(--primary_50);
+      }
+      footer {
+        background-color: var(--secondary_900);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_7);
+        padding: var(--spacing_4) 0 var(--spacing_4) var(--spacing_4);
+      }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing_7);
-}
+      .footer {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_7);
+      }
 
-.footer_col_karrusel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing_1);
-  align-items: start;
-}
+      .footer_col_karrusel {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing_1);
+        align-items: start;
+      }
 
-.footer_logo {
-  width: 95px;
-}
+      .footer_logo {
+        width: 95px;
+      }
 
-.social_flex {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-.social_icon_flex {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-items: center;
-  gap: var(--spacing_3);
-  margin: var(--spacing_2) 0;
-}
+      .social_flex {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+      .social_icon_flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
+        gap: var(--spacing_3);
+        margin: var(--spacing_2) 0;
+      }
 
-.icon_social {
-  width: 30px;
-}
+      .icon_social {
+        width: 30px;
+      }
 
-@media (min-width: 800px) {
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--spacing_6) var(--spacing_12);
-  }
+      @media (min-width: 800px) {
+        footer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: var(--spacing_6) var(--spacing_12);
+        }
 
-  .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
+        .footer {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+        }
 
-  .social_flex {
-    align-items: end;
-    gap: var(--spacing_1);
-  }
-
-}
-  </style>
+        .social_flex {
+          align-items: end;
+          gap: var(--spacing_1);
+        }
+      }
+    </style>
+  </section>
+</footer>
