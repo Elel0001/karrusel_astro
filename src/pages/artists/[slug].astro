@@ -1,6 +1,7 @@
 ---
 import "../../styles/general.css";
 import MainLayout from "../../layouts/MainLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
@@ -26,7 +27,7 @@ console.log(myData);
 
 <MainLayout title={myData.name}>
   <section class="flex_col">
-    <!-- <Breadcrumb /> -->
+    <Breadcrumb link={myData.slug}>{myData.name}</Breadcrumb>
     <article class="info flex_col">
       <h1>{myData.name}</h1>
       <div class="flex_row">
