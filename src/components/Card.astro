@@ -7,9 +7,12 @@ const { heading, button } = Astro.props;
 
 <article>
   <Content heading={heading} button={button}> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt nihil quod vitae dicta nemo ratione ipsa fuga odit quo, harum explicabo magnam hic, quas consequuntur sed non velit qui magni.</p></Content>
-  <Accordion question="Are there specific shuttle services from nearby cities to the festival?" answer="Yes, we offer shuttle services from select cities for your convenience. Check our website for detailed information on routes and schedules." />
-  <Accordion question="What types of beverages are available at the festival bars?" answer="Our bars offer a diverse selection of beverages, including alcoholic and non-alcoholic options. Check our menu for the full range of choices." />
-  <Accordion question="Can I charge my devices on-site, and are there designated charging stations?" answer="Yes, we provide designated charging stations for your convenience. Keep your devices charged and capture all those memorable festival moments." />
+
+  <div>
+    <Accordion question="Are there specific shuttle services from nearby cities to the festival?" answer="Yes, we offer shuttle services from select cities for your convenience. Check our website for detailed information on routes and schedules." />
+    <Accordion question="What types of beverages are available at the festival bars?" answer="Our bars offer a diverse selection of beverages, including alcoholic and non-alcoholic options. Check our menu for the full range of choices." />
+    <Accordion question="Can I charge my devices on-site, and are there designated charging stations?" answer="Yes, we provide designated charging stations for your convenience. Keep your devices charged and capture all those memorable festival moments." />
+  </div>
 </article>
 
 <style>
@@ -23,6 +26,11 @@ const { heading, button } = Astro.props;
     padding: var(--spacing_5);
 
     margin: 2rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
   }
   @media (min-width: 800px) {
     article {

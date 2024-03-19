@@ -3,24 +3,30 @@ const { question, answer } = Astro.props;
 ---
 
 <div class="accordion_item">
-  <div class="accordion_header">{question}<img class="arrow" src="img/arrow.svg" alt="arrow icon" /></div>
+  <div class="accordion_header">
+    <p>{question}</p>
+
+    <img class="arrow" src="img/arrow.svg" alt="arrow icon" />
+  </div>
   <div class="accordion_content">
     <p>{answer}</p>
   </div>
 </div>
 
 <style>
+  .accordion_item {
+    border-bottom: 2px solid var(--primary_50);
+  }
   /* Accordion header - styling */
   .accordion_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     font-family: var(--font_body);
     font-size: 1rem;
     color: var(--primary_50);
-    border-bottom: 2px solid var(--primary_50);
     padding: var(--spacing_3);
+    border-bottom: 0.5px solid var(--primary_50);
   }
 
   /* Content - vises ikke */
@@ -29,23 +35,18 @@ const { question, answer } = Astro.props;
     padding: var(--spacing_3);
   }
 
+  p {
+    max-width: 85%;
+  }
+
   /* Pil styling og rotering */
   .arrow {
-    width: 10%;
+    width: 50px;
     transition: transform 0.3s ease;
   }
 
   .rotate {
     transform: rotate(180deg);
-  }
-
-  @media (min-width: 800px) {
-    .accordion_header {
-      width: 504px;
-    }
-    .arrow {
-      width: 5%;
-    }
   }
 </style>
 
