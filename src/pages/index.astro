@@ -7,7 +7,7 @@ import Poster from "../components/Poster.astro";
 ---
 
 <MainLayout>
-  <section>
+  <section class="hero">
     <img class="hero_img" src="img/hero.jpeg" alt="hero image" />
     <div class="container">
       <div class="list">
@@ -45,17 +45,21 @@ import Poster from "../components/Poster.astro";
     <h3 class="txt_right">In the woods</h3>
     <Button class="button" type="secondary" link="/#">Read more</Button>
   </section>
-  <section>
+  <section class="poster">
     <Poster />
   </section>
-  <section>
+  <section class="count_down"></section>
+  <section class="faq">
     <Card heading="FAQ" button="Read more" />
   </section>
 </MainLayout>
 
 <style>
-  section {
-    padding-bottom: var(--spacing_12);
+  .grid_1-1-1-1,
+  .poster,
+  .count_down,
+  .faq {
+    margin: 0 var(--spacing_4);
   }
 
   /******** Hero section ********/
@@ -156,6 +160,12 @@ import Poster from "../components/Poster.astro";
 
   /* Section 2 i desk version */
   @media (min-width: 800px) {
+    .grid_1-1-1-1,
+    .poster,
+    .count_down,
+    .faq {
+      margin: 0 var(--spacing_12);
+    }
     .grid_1-1-1-1 {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
