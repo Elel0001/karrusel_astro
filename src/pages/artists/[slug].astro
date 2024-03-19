@@ -2,6 +2,7 @@
 import "../../styles/general.css";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import Blob from "../../components/Blob.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
@@ -56,6 +57,7 @@ console.log(myData);
       <img src="/svg/instagram.svg" alt="intagram icon" class="icon" />
     </article>
   </section>
+  <img src="/svg/blob_single.svg" alt="blob" class="blob_pos" />
 </MainLayout>
 <style>
   .flex_row {
@@ -70,6 +72,7 @@ console.log(myData);
   section {
     gap: var(--spacing_8);
     margin: var(--spacing_4);
+    z-index: 2;
   }
 
   div {
@@ -109,6 +112,16 @@ console.log(myData);
   .icon {
     width: 30px;
   }
+
+  .blob_pos {
+    position: absolute;
+    z-index: 0;
+    top: 10%;
+    left: -80%;
+    width: 250%;
+    rotate: 125deg;
+  }
+
   @media (min-width: 800px) {
     section {
       margin: var(--spacing_7) var(--spacing_12);
