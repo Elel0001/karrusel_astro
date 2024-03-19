@@ -1,0 +1,90 @@
+---
+import "../styles/general.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Accordion from "../components/Accordion.astro";
+import FAQCard from "../components/FAQCard.astro";
+import data from "../data/faq.json";
+console.log(data);
+---
+
+<MainLayout title="FAQ">
+  <div class="faqwrapper">
+    <section class="header">
+      <h1>FAQ</h1>
+      <p>Got questions? We've got answers! Here are some of our Frequently Asked Questions to help you out.</p>
+    </section>
+    <section class="faq">
+      <div class="navigationbar">
+        <h2>Jump to</h2>
+        <ol>
+          <li><a href="#accesspass">Access Pass</a></li>
+          <li><a href="#accessibilty">Accessibilty</a></li>
+          <li><a href="#bars">Bars</a></li>
+        </ol>
+      </div>
+      <div class="faqlist">
+        {
+          data.map((faqEntry) => {
+            return (
+              <FAQCard heading={faqEntry.heading} somethingunique={faqEntry.somethingunique}>
+                <Accordion variant="fullwidth" question={faqEntry.q1} answer={faqEntry.a1} />
+                <Accordion variant="fullwidth" question={faqEntry.q2} answer={faqEntry.a2} />
+              </FAQCard>
+            );
+          })
+        }
+      </div>
+    </section>
+  </div>
+</MainLayout>
+<style>
+  .faqwrapper > * {
+    margin-bottom: 2rem;
+  }
+  .navigationbar {
+    background-color: var(--secondary_900);
+    padding: var(--spacing_8);
+    border-radius: var(--radius_medium);
+  }
+  .navigationbar a {
+    color: var(--primary_50);
+    text-decoration: none;
+  }
+  .navigationbar h2 {
+    font-family: var(--font_display);
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+  ol {
+    list-style-type: none;
+    padding-left: var(--spacing_4);
+  }
+  .header p {
+    font-family: var(--font_display);
+    font-size: 1.125rem;
+    max-width: 500px;
+  }
+
+  .header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .faq {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .faqlist {
+    display: grid;
+    gap: 1rem;
+  }
+  @media (min-width: 1000px) {
+    .faq {
+      grid-template-columns: 300px minmax(400px, 700px);
+    }
+  }
+</style>

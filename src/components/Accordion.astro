@@ -1,8 +1,8 @@
 ---
-const { question, answer } = Astro.props;
+const { question, answer, variant } = Astro.props;
 ---
 
-<div class="accordion_item">
+<div class="accordion_item" data-variant={variant}>
   <div class="accordion_header">{question}<img class="arrow" src="img/arrow.svg" alt="arrow icon" /></div>
   <div class="accordion_content">
     <p>{answer}</p>
@@ -46,6 +46,10 @@ const { question, answer } = Astro.props;
     .arrow {
       width: 5%;
     }
+  }
+
+  [data-variant="fullwidth"] .accordion_header {
+    width: 100%;
   }
 </style>
 
