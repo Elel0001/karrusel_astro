@@ -2,11 +2,11 @@
 import Content from "./Content.astro";
 import Accordion from "./Accordion.astro";
 
-const { heading, button } = Astro.props;
+const { heading, button, link } = Astro.props;
 ---
 
 <article>
-  <Content heading={heading} button={button}> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt nihil quod vitae dicta nemo ratione ipsa fuga odit quo, harum explicabo magnam hic, quas consequuntur sed non velit qui magni.</p></Content>
+  <Content heading={heading} button={button} link={link}> <slot /></Content>
 
   <div>
     <Accordion question="Are there specific shuttle services from nearby cities to the festival?" answer="Yes, we offer shuttle services from select cities for your convenience. Check our website for detailed information on routes and schedules." />

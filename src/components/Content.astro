@@ -1,7 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 
-const { heading, text, button } = Astro.props;
+const { heading, button, link } = Astro.props;
 ---
 
 <article>
@@ -9,7 +9,7 @@ const { heading, text, button } = Astro.props;
     <h4>{heading}</h4>
     <slot />
   </div>
-  <Button type="secondary" link="">{button}</Button>
+  <Button type="secondary" link={link}>{button}</Button>
 </article>
 
 <style>
