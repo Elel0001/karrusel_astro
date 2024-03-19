@@ -120,6 +120,16 @@ p {
   color: var(--primary_50);
 }
 
+/************* LINK STYLING *************/
+a {
+  font-family: var(--font_display);
+  color: var(--primary_50);
+  text-decoration: none;
+}
+a:hover {
+  filter: drop-shadow(0 0 4px var(--primary_50));
+}
+
 @media (min-width: 800px) {
   h1 {
     font-size: 4rem;
