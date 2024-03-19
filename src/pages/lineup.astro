@@ -4,8 +4,9 @@ import "../styles/general.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import CardArtist from "../components/CardArtist.astro";
 import Poster from "../components/Poster.astro";
+import Button from "../components/Button.astro";
 
-const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
+const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel?limit=6", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZnVyaGRoc2tjeGZsYnhzdHpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDMzNTMsImV4cCI6MjAyNjA3OTM1M30.LOhTm5mG10QgwCONoiEr4awaIvHkbSl4G1wxOgPX4Mk",
@@ -26,6 +27,9 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
           return <CardArtist data={artist} />;
         })
       }
+    </div>
+    <div class="button">
+      <Button type="secondary" link="/#">Read more</Button>
     </div>
   </section>
 
@@ -52,6 +56,11 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     margin: 0 var(--spacing_4);
   }
 
+  .button {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing_7);
+  }
   @media (min-width: 800px) {
     .artists,
     .table {
