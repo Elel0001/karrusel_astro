@@ -4,7 +4,7 @@ const { data } = Astro.props;
 
 <a href={`artists/${data.slug}`}>
   <article>
-    <img src="img/album.png" alt="Picture of artist" />
+    <img src=`/img/${data.image}` alt="Picture of artist" />
     <div>
       <h4>{data.name}</h4>
       <div class="info">
@@ -48,6 +48,6 @@ const { data } = Astro.props;
   }
 
   img {
-    border-radius: 0;
+    border-radius: var(--radius_medium) var(--radius_medium) 0 0;
   }
 </style>
