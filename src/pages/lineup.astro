@@ -38,7 +38,7 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
   .poster {
     background: url(), var(--secondary_900);
     background-repeat: no-repeat, no-repeat;
-    margin: var(--spacing_4);
+    padding: var(--spacing_7) var(--spacing_4);
   }
   div {
     display: grid;
@@ -46,5 +46,17 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     gap: var(--spacing_4);
 
     margin-top: var(--spacing_4);
+  }
+
+  .artists,
+  .table {
+    margin: 0 var(--spacing_4);
+  }
+
+  @media (min-width: 800px) {
+    .artists,
+    .table {
+      margin: 0 var(--spacing_12);
+    }
   }
 </style>
