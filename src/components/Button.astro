@@ -2,10 +2,10 @@
 const { type, size, link } = Astro.props;
 ---
 
-<button class={type + " " + size} href={link}> <slot /></button>
+<a class={type + " button"} href={link}><slot /></a>
 
 <style>
-  button {
+  .button {
     font-family: var(--font_body);
     font-size: 1rem;
     font-weight: 600;
@@ -19,10 +19,10 @@ const { type, size, link } = Astro.props;
     width: fit-content;
   }
 
-  button:hover {
+  .button:hover {
     font-size: 1.1rem;
   }
-  button:visited {
+  .button:visited {
     color: var(--primary_50);
   }
 
@@ -45,7 +45,7 @@ const { type, size, link } = Astro.props;
   }
 
   @media (min-width: 800px) {
-    button {
+    .button {
       font-size: 1.125rem;
     }
   }
