@@ -46,18 +46,45 @@ console.log(data);
       </div>
     </section>
   </div>
+  <div class="background">
+    <img class="blob1" src="/svg/blob_single.svg" alt="blob" />
+    <img class="blob2" src="/svg/blob_single.svg" alt="blob" />
+  </div>
 </MainLayout>
 <style>
+  .faqwrapper {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing_4);
+  }
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .blob1 {
+    position: absolute;
+    z-index: 0;
+    top: 80%;
+    rotate: 35deg;
+  }
+  .blob2 {
+    position: absolute;
+    z-index: 0;
+    top: 10%;
+    rotate: 200deg;
+  }
   .faqwrapper > * {
-    padding-top: var(--spacing_11);
+    padding-top: var(--spacing_10);
   }
   .navigationbar {
     background-color: var(--secondary_900);
     padding: var(--spacing_8);
     border-radius: var(--radius_medium);
-    align-self: start;
-    position: sticky;
-    top: 5%;
+    margin: 0 var(--spacing_9);
   }
   .navigationbar a {
     color: var(--primary_50);
@@ -109,6 +136,24 @@ console.log(data);
   @media (min-width: 1000px) {
     .faq {
       grid-template-columns: 300px minmax(400px, 700px);
+    }
+    .navigationbar {
+      align-self: start;
+      position: sticky;
+      top: 5%;
+      margin: 0;
+    }
+    .blob1 {
+      top: 20%;
+      rotate: 35deg;
+    }
+    .blob2 {
+      top: 60%;
+      rotate: 200deg;
+    }
+
+    .faqwrapper > * {
+      padding-top: var(--spacing_11);
     }
   }
 </style>
