@@ -84,7 +84,7 @@ console.log(data);
     background-color: var(--secondary_900);
     padding: var(--spacing_8);
     border-radius: var(--radius_medium);
-    margin: 0 var(--spacing_9);
+    max-width: 20rem;
   }
   .navigationbar a {
     color: var(--primary_50);
@@ -100,16 +100,14 @@ console.log(data);
     padding-left: var(--spacing_4);
   }
   .header p {
-    font-family: var(--font_display);
-    font-size: 1.35rem;
     max-width: 500px;
   }
 
   .header {
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing_3);
   }
   .faq {
     display: grid;
@@ -140,7 +138,7 @@ console.log(data);
     .navigationbar {
       align-self: start;
       position: sticky;
-      top: 5%;
+      top: var(--spacing_12);
       margin: 0;
     }
     .blob1 {

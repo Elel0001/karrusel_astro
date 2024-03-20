@@ -37,7 +37,7 @@ const { question, answer, variant } = Astro.props;
 
   /* Pil styling og rotering */
   .arrow {
-    width: 50px;
+    width: 25px;
     transition: transform 0.3s ease;
   }
 
@@ -47,23 +47,6 @@ const { question, answer, variant } = Astro.props;
 
   .accordion_item {
     border-bottom: 2px solid var(--primary_50);
-  }
-
-  @media (min-width: 800px) {
-    .accordion_header,
-    .accordion_content {
-      width: 504px;
-    }
-    .arrow {
-      width: 5%;
-    }
-  }
-
-  [data-variant="fullwidth"] .accordion_header {
-    width: 100%;
-  }
-  [data-variant="fullwidth"] .accordion_content {
-    width: 100%;
   }
 </style>
 
