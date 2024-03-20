@@ -3,7 +3,7 @@ const { question, answer, variant } = Astro.props;
 ---
 
 <div class="accordion_item" data-variant={variant}>
-  <div class="accordion_header">{question}<img class="arrow" src="img/arrow.svg" alt="arrow icon" /></div>
+  <div class="accordion_header"><p>{question}</p><img class="arrow" src="img/arrow.svg" alt="arrow icon" /></div>
   <div class="accordion_content">
     <p>{answer}</p>
   </div>
@@ -19,7 +19,7 @@ const { question, answer, variant } = Astro.props;
     font-family: var(--font_body);
     font-size: 1rem;
     color: var(--primary_50);
-    border-bottom: 2px solid var(--primary_50);
+    border-bottom: 0.5px solid var(--primary_50);
     padding: var(--spacing_3);
   }
 
@@ -39,8 +39,13 @@ const { question, answer, variant } = Astro.props;
     transform: rotate(180deg);
   }
 
+  .accordion_item {
+    border-bottom: 2px solid var(--primary_50);
+  }
+
   @media (min-width: 800px) {
-    .accordion_header {
+    .accordion_header,
+    .accordion_content {
       width: 504px;
     }
     .arrow {
