@@ -1,26 +1,106 @@
 [
   {
     "heading": "Access Pass",
-    "q1": "can i buy",
-    "a1": "No!",
-    "q2": "are there different",
-    "a2": "No!",
+    "q1": " Can I buy an access pass at the entrance on the day of the festival?",
+    "a1": "While limited passes may be available at the entrance, it's recommended to purchase in advance online to secure your entry and avoid potential disappointment.",
+    "q2": "Are there different types of access passes with varying privileges?",
+    "a2": "Yes, we offer various access pass options with different privileges. Explore our website to find the pass that suits your preferences and enhances your festival experience.",
     "somethingunique": "accesspass"
   },
   {
     "heading": "Accessibility",
-    "q1": "can i buy",
-    "a1": "No!",
-    "q2": "are there different",
-    "a2": "No!",
+    "q1": " Are there special accommodations for attendees with mobility challenges or disabilities?",
+    "a1": "Absolutely! Our festival is designed to be accessible to all. Check our accessibility page for details on ramps, designated seating, and other accommodations to enhance your experience.",
+    "q2": "Can I bring service animals to the festival, and are there designated relief areas for them?",
+    "a2": "Yes, service animals are welcome. We have designated relief areas and accommodations to ensure the comfort of both service animals and their owners.",
     "somethingunique": "accessibility"
   },
   {
     "heading": "Bars",
-    "q1": "do you have bars?",
-    "a1": "No!",
-    "q2": "Why not?",
-    "a2": "No!",
+    "q1": "What types of beverages are available at the festival bars?",
+    "a1": "Our bars offer a diverse selection of beverages, including alcoholic and non-alcoholic options. Check our menu for the full range of choices.",
+    "q2": "Are there designated areas for enjoying drinks, and can I bring my own beverages?",
+    "a2": "Enjoy your drinks in designated areas, and please refrain from bringing your own beverages. Help us maintain a clean and enjoyable festival environment.",
     "somethingunique": "bars"
+  },
+  {
+    "heading": "Electrical Outlets",
+    "q1": "Can I charge my phone, and are there disignated charging stations?",
+    "a1": "We provide designated charging stations, so you can keep your devices fully charged during the festival.",
+    "q2": "Are there restrictions on using personal generators or bringing my own charging equipment?",
+    "a2": "To ensure safety, personal generators are not allowed. Please rely on our designated charging stations to meet your electrical needs during the festival.",
+    "somethingunique": "electricaloutlets"
+  },
+  {
+    "heading": "Events",
+    "q1": "Are there family-friendly events, and what activities are suitable for children?",
+    "a1": "We appreciate your input! While we can't accommodate all requests, feel free to share your suggestions on our website, and we'll consider them for future editions.",
+    "q2": "Are there family-friendly events, and what activities are suitable for children?",
+    "a2": "Absolutely! Check our schedule for family-friendly events and activities designed for children to enjoy a memorable festival experience.",
+    "somethingunique": "events"
+  },
+  {
+    "heading": "Fascilities",
+    "q1": "Are there restroom facilities available at the festival?",
+    "a1": "Yes, we have conveniently located restroom facilities equipped with necessary amenities. Refer to the festival map for restroom locations.",
+    "q2": "Are there designated areas for picnics or relaxation within the festival grounds?",
+    "a2": "Absolutely! Enjoy designated picnic areas and relaxation spots to take a break and soak in the festival atmosphere. Check our map for these cozy zones.",
+    "somethingunique": "fascilities"
+  },
+  {
+    "heading": "Health and Safety",
+    "q1": "Is there a designated first aid station, and are medical professionals available on-site?",
+    "a1": "Your well-being is our priority. We have a dedicated first aid station with trained medical professionals ready to assist. Find its location on the festival map.",
+    "q2": "What measures are in place to ensure the health and safety of festival attendees?",
+    "a2": "We've implemented comprehensive health and safety measures, including medical personnel, security personnel, and emergency response plans. Visit our website for detailed information on our commitment to your well-being.",
+    "somethingunique": "healthandsafety"
+  },
+  {
+    "heading": "Lost Property",
+    "q1": "What should I do if I realize I've lost something during the festival?*",
+    "a1": "Don't worry! Head over to our Lost and Found at the information booth, where our dedicated team will assist you in locating and recovering your lost items.",
+    "q2": "How long are lost items kept, and is there a process for reclaiming them after the festival?",
+    "a2": "Lost items are securely held for a specified period after the festival. Contact our Lost and Found department within that time frame to reclaim your belongings.",
+    "somethingunique": "lostproperty"
+  },
+  {
+    "heading": "Opening Hours",
+    "q1": "What are the opening hours?",
+    "a1": "Thursday 18.00-01.00, Friday 18.00-04.00 and Saturday: 18.00-03.00.",
+    "q2": "Are there any special events happening during the late hours of the festival?",
+    "a2": "Yes, we have special nighttime events planned! Check the schedule for exciting performances and activities happening during the later hours.",
+    "somethingunique": "openinghours"
+  },
+  {
+    "heading": "Regulations",
+    "q1": "Are there restrictions on bringing personal items into the festival grounds?",
+    "a1": "Yes, please review our list of restricted items on the website to ensure a smooth entry. Your cooperation helps maintain a safe and secure environment for all attendees.",
+    "q2": "How strictly are festival regulations enforced, and what are the consequences for non-compliance?",
+    "a2": "We take regulations seriously. Non-compliance may result in removal from the festival grounds. Please respect the rules to ensure a positive experience for everyone.",
+    "somethingunique": "regulations"
+  },
+  {
+    "heading": "Ticket Sale",
+    "q1": "When does the ticket sale start?",
+    "a1": "Early Bird Festival Passes on sale until 1 April. and provides access to all 3 days at the festival. The day tickets will go on sale later.",
+    "q2": "Where do I buy my tickets?",
+    "a2": "You can buy your tickets at Ticketmaster.",
+    "somethingunique": "ticketsale"
+  },
+  {
+    "heading": "Transport",
+    "q1": "Are there specific shuttle services from nearby cities to the festival?",
+    "a1": "Yes, we offer shuttle services from select cities for your convenience. Check our website for detailed information on routes and schedules.",
+    "q2": "Is there on-site parking available, and do I need to pre-book a parking pass?",
+    "a2": "On-site parking is available, and it's recommended to pre-book your parking pass for a seamless arrival. Visit our website to reserve your spot.",
+    "somethingunique": "transport"
+  },
+  {
+    "heading": "Volunteers",
+    "q1": "What are the requirements for becoming a festival volunteer, and what roles are available?",
+    "a1": "We welcome volunteers with various skills and interests. Visit our volunteer page to learn about requirements and discover the diverse roles available to contribute to the festival's success.",
+    "q2": "Are there any perks or benefits for volunteering at the festival?",
+    "a2": "Absolutely! Volunteers receive perks such as exclusive access to certain events, festival merchandise, and the opportunity to be an integral part of creating an unforgettable experience for attendees.",
+    "somethingunique": "volunteers"
   }
 ]
