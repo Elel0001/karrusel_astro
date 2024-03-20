@@ -1,0 +1,22 @@
+---
+const { heading, somethingunique } = Astro.props;
+import Accordion from "./Accordion.astro";
+---
+
+<article id={somethingunique}>
+  <h3>{heading}</h3>
+  <slot />
+</article>
+
+<style>
+  article {
+    border-radius: var(--radius_medium);
+    background-color: var(--primary_800);
+    padding: var(--spacing_4);
+  }
+
+  h3 {
+    font-family: var(--font_display);
+    font-size: 1.5rem;
+  }
+</style>
