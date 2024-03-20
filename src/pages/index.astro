@@ -22,22 +22,25 @@ import CountDown from "../components/CountDown.astro";
           <span class="date">22.-24. Aug 2024</span>
         </div>
       </div>
-      <div class="container">
-        <div class="list">
-          <div class="item">
-            <span class="item_txt">Karrusel Festival</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-            <span class="date">22.-24. Aug 2024</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-            <span class="item_txt">Karrusel Festival</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-            <span class="date">22.-24. Aug 2024</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-          </div>
+    </div>
+
+    <div class="container">
+      <div class="list">
+        <div class="item">
+          <span class="item_txt">Karrusel Festival</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
+          <span class="date">22.-24. Aug 2024</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
+          <span class="item_txt">Karrusel Festival</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
+          <span class="date">22.-24. Aug 2024</span>
+          <img class="star" src="svg/star.svg" alt="star icon" />
         </div>
       </div>
     </div>
-    <Button type="primary" link="/#">Buy tickets</Button>
+    <div class="hero_button">
+      <Button type="primary" link="/#">Buy tickets</Button>
+    </div>
   </section>
 
   <section class="grid">
@@ -58,12 +61,7 @@ import CountDown from "../components/CountDown.astro";
     <CountDown number="42" unit="Mins" />
   </section>
   <section class="faq">
-    <Card heading="FAQ" button="Read more" link="/#"
-      ><p>
-        Explore the Essentials: Your go-to guide for all things festival-related! Our Frequently Asked Questions (FAQ) page provides quick answers to common queries about transportation, access passes, facilities, and more. Have a question? Find it here or reach out for personalized assistance.
-        We're dedicated to ensuring your festival experience is seamless and unforgettable!
-      </p>
-    </Card>
+    <Card heading="FAQ" button="Read more" link="/#"><p>Explore the Essentials: Your go-to guide for all things festival-related! Our Frequently Asked Questions (FAQ) page provides quick answers to common queries about transportation, access passes, facilities, and more. Have a question? Find it here or reach out for personalized assistance. We're dedicated to ensuring your festival experience is seamless and unforgettable!</p> </Card>
   </section>
 </MainLayout>
 
@@ -78,6 +76,14 @@ import CountDown from "../components/CountDown.astro";
   /* Hero billede placering */
   .hero_img {
     position: relative;
+    z-index: 1;
+  }
+
+  .hero_button {
+    position: absolute;
+    z-index: 3;
+    top: 15%;
+    left: 50%;
   }
 
   /* Text der looper - container */
@@ -85,18 +91,33 @@ import CountDown from "../components/CountDown.astro";
     display: flex;
     white-space: nowrap;
     overflow: hidden;
-    gap: var(--spacing_11);
-  }
-
-  /* Animation på list indhold */
-  .list {
-    display: flex;
-    align-items: top;
     -webkit-animation: loop 20s infinite linear;
     animation: loop 20s infinite linear;
+    position: absolute;
+    z-index: 3;
+    top: 10%;
   }
 
   @keyframes loop {
+    100% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+  }
+
+  .container:nth-child(2) {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    top: 10%;
+    left: 107%;
+    -webkit-animation: loop_2 20s infinite linear;
+    animation: loop_2 20s infinite linear;
+  }
+
+  @keyframes loop_2 {
     100% {
       -webkit-transform: translateX(-100%);
       transform: translateX(-100%);
