@@ -1,6 +1,6 @@
 ---
 import "../../styles/general.css";
-import MainLayout from "../../layouts/MainLayout.astro";
+import SingleLayout from "../../layouts/SingleLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Blob from "../../components/Blob.astro";
 
@@ -26,9 +26,9 @@ const { myData } = Astro.props;
 console.log(myData);
 ---
 
-<MainLayout title={myData.name}>
-  <section class="flex_col">
-    <Breadcrumb link={myData.slug}>{myData.name}</Breadcrumb>
+<SingleLayout title={myData.name}>
+  <Breadcrumb link={myData.slug}>{myData.name}</Breadcrumb>
+  <section class="layout">
     <article class="info flex_col">
       <h1>{myData.name}</h1>
       <div class="flex_row">
@@ -45,26 +45,31 @@ console.log(myData);
       <h5>{myData.song}</h5>
       <img src="/img/player.svg" alt="Picture of artist" />
     </article>
+    <div class="flex_col about_social">
+      <article class="about flex_col">
+        <h6>About</h6>
+        <p>{myData.about}</p>
+      </article>
 
-    <article class="about flex_col">
-      <h6>About</h6>
-      <p>{myData.about}</p>
-    </article>
-
-    <article class="social flex_row">
-      <img src="/svg/spotify.svg" alt="spotify icon" class="icon" />
-      <img src="/svg/youtube.svg" alt="youtube icon" class="icon" />
-      <img src="/svg/instagram.svg" alt="intagram icon" class="icon" />
-    </article>
+      <article class="social flex_row">
+        <img src="/svg/spotify.svg" alt="spotify icon" class="icon" />
+        <img src="/svg/youtube.svg" alt="youtube icon" class="icon" />
+        <img src="/svg/instagram.svg" alt="intagram icon" class="icon" />
+      </article>
+    </div>
   </section>
-  <img src="/svg/blob_single.svg" alt="blob" class="blob_pos" />
-</MainLayout>
+  <!-- <img src="/svg/blob_single.svg" alt="blob" class="blob_pos" /> -->
+</SingleLayout>
 <style>
   .flex_row {
     display: flex;
     flex-direction: row;
   }
   .flex_col {
+    display: flex;
+    flex-direction: column;
+  }
+  .layout {
     display: flex;
     flex-direction: column;
   }
@@ -124,7 +129,25 @@ console.log(myData);
 
   @media (min-width: 800px) {
     section {
-      margin: var(--spacing_7) var(--spacing_12);
+      margin: var(--spacing_7) var(--spacing_13);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--spacing_9) 10%;
+    }
+
+    .play {
+      grid-row: 1 / span 3;
+      grid-column: 1 / span 1;
+    }
+
+    .info {
+    }
+
+    .about_social {
+      align-items: start;
     }
   }
 </style>
