@@ -9,37 +9,40 @@ import CountDown from "../components/CountDown.astro";
 
 <MainLayout>
   <section class="hero">
-    <img class="hero_img" src="img/hero.jpeg" alt="hero image" />
-    <div class="container">
-      <div class="list">
-        <div class="item">
-          <span class="item_txt">Karrusel Festival</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-          <span class="date">22.-24. Aug 2024</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-          <span class="item_txt">Karrusel Festival</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-          <span class="date">22.-24. Aug 2024</span>
+    <img class="hero_img" src="/img/hero.webp" alt="hero image" />
+    <div class="wrapper">
+      <div class="container">
+        <div class="list">
+          <div class="item">
+            <span class="item_txt">Karrusel Festival</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+            <span class="date">22.-24. Aug 2024</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+            <span class="item_txt">Karrusel Festival</span>
+            <img class="star" src="svg/star.svg" alt="star icon" />
+            <span class="date">22.-24. Aug 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="list">
+          <div class="item">
+            <span class="item_txt">Karrusel Festival</span>
+            <img class="star" src="/svg/star.svg" alt="star icon" />
+            <span class="date">22.-24. Aug 2024</span>
+            <img class="star" src="/svg/star.svg" alt="star icon" />
+            <span class="item_txt">Karrusel Festival</span>
+            <img class="star" src="/svg/star.svg" alt="star icon" />
+            <span class="date">22.-24. Aug 2024</span>
+            <img class="star" src="/svg/star.svg" alt="star icon" />
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="list">
-        <div class="item">
-          <span class="item_txt">Karrusel Festival</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-          <span class="date">22.-24. Aug 2024</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-          <span class="item_txt">Karrusel Festival</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-          <span class="date">22.-24. Aug 2024</span>
-          <img class="star" src="svg/star.svg" alt="star icon" />
-        </div>
-      </div>
-    </div>
     <div class="hero_button">
       <Button type="primary" link="/#">Buy tickets</Button>
+      <img class="hero_arrow" src="/img/arrow.svg" alt="pil" />
     </div>
   </section>
 
@@ -63,6 +66,11 @@ import CountDown from "../components/CountDown.astro";
   <section class="faq">
     <Card heading="FAQ" button="Read more" link="/#"><p>Explore the Essentials: Your go-to guide for all things festival-related! Our Frequently Asked Questions (FAQ) page provides quick answers to common queries about transportation, access passes, facilities, and more. Have a question? Find it here or reach out for personalized assistance. We're dedicated to ensuring your festival experience is seamless and unforgettable!</p> </Card>
   </section>
+
+  <div class="background">
+    <img class="blob_1" src="/svg/blob_single.svg" alt="blob" />
+    <img class="blob_2" src="/svg/blob_single.svg" alt="blob" />
+  </div>
 </MainLayout>
 
 <style>
@@ -70,6 +78,9 @@ import CountDown from "../components/CountDown.astro";
   .count_down,
   .faq {
     margin: 0 var(--spacing_4);
+  }
+  .hero {
+    margin: 0 1px;
   }
 
   /******** Hero section ********/
@@ -82,20 +93,34 @@ import CountDown from "../components/CountDown.astro";
   .hero_button {
     position: absolute;
     z-index: 3;
-    top: 15%;
-    left: 50%;
+    top: 30%;
+    left: 25%;
+  }
+
+  .hero_arrow {
+    position: absolute;
+    z-index: 3;
+    top: 333%;
+    left: 25%;
+    width: 95px;
   }
 
   /* Text der looper - container */
+  .wrapper {
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+  }
   .container {
     display: flex;
     white-space: nowrap;
-    overflow: hidden;
     -webkit-animation: loop 20s infinite linear;
     animation: loop 20s infinite linear;
     position: absolute;
     z-index: 3;
-    top: 10%;
+    top: 18%;
   }
 
   @keyframes loop {
@@ -108,10 +133,9 @@ import CountDown from "../components/CountDown.astro";
   .container:nth-child(2) {
     display: flex;
     white-space: nowrap;
-    overflow: hidden;
     position: absolute;
     z-index: 3;
-    top: 10%;
+    top: 18%;
     left: 107%;
     -webkit-animation: loop_2 20s infinite linear;
     animation: loop_2 20s infinite linear;
@@ -148,6 +172,24 @@ import CountDown from "../components/CountDown.astro";
   .button_primary {
     display: grid;
     place-self: center;
+  }
+
+  @media (min-width: 800px) {
+    .hero_button {
+      position: absolute;
+      top: 16%;
+      left: 25%;
+    }
+    .hero_arrow {
+      position: absolute;
+      top: 18%;
+      left: 25%;
+    }
+
+    .container,
+    .container:nth-child(2) {
+      top: 10%;
+    }
   }
 
   /************* Section 2 ***********/
@@ -251,5 +293,35 @@ import CountDown from "../components/CountDown.astro";
     .count_down {
       gap: 10%;
     }
+  }
+
+  /********************* Blobber ********************/
+
+  .grid,
+  .faq,
+  .count_down,
+  .poster {
+    position: relative;
+    z-index: 1;
+  }
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .blob_1 {
+    position: absolute;
+    z-index: 0;
+    top: 19%;
+    rotate: 22deg;
+  }
+
+  .blob_2 {
+    position: absolute;
+    z-index: 0;
+    top: 63%;
+    rotate: 14deg;
   }
 </style>
