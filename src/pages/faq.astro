@@ -18,18 +18,18 @@ console.log(data);
         <h2>Jump to</h2>
         <ol>
           <li><a href="#accesspass">Access Pass</a></li>
-          <li><a href="#accessibilty">Accessibilty</a></li>
-          <li><a href="#bars">Bars</a></li>
-          <li><a href="#electricaloutlets">Electrical Outlets</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#fascilities">Fascilities</a></li>
-          <li><a href="#healthandsafety">Health and Safety</a></li>
-          <li><a href="#lostproperty">Lost Property</a></li>
-          <li><a href="#openinghours">Opening Hours</a></li>
-          <li><a href="#regulations">Regulations</a></li>
-          <li><a href="#ticketsale">Ticket Sale</a></li>
-          <li><a href="#transport">Transport</a></li>
-          <li><a href="#volunteers">Volunteers</a></li>
+          <li><a href="#accesspass">Accessibilty</a></li>
+          <li><a href="#accessibility">Bars</a></li>
+          <li><a href="#bars">Electrical Outlets</a></li>
+          <li><a href="#electricaloutlets">Events</a></li>
+          <li><a href="#events">Fascilities</a></li>
+          <li><a href="#fascilities">Health and Safety</a></li>
+          <li><a href="#healthandsafety">Lost Property</a></li>
+          <li><a href="#lostproperty">Opening Hours</a></li>
+          <li><a href="#openinghours">Regulations</a></li>
+          <li><a href="#regulations">Ticket Sale</a></li>
+          <li><a href="#ticketsale">Transport</a></li>
+          <li><a href="#transport">Volunteers</a></li>
         </ol>
       </div>
       <div class="faqlist">
@@ -49,12 +49,15 @@ console.log(data);
 </MainLayout>
 <style>
   .faqwrapper > * {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
   .navigationbar {
     background-color: var(--secondary_900);
     padding: var(--spacing_8);
     border-radius: var(--radius_medium);
+    align-self: start;
+    position: sticky;
+    top: 5%;
   }
   .navigationbar a {
     color: var(--primary_50);
@@ -71,7 +74,7 @@ console.log(data);
   }
   .header p {
     font-family: var(--font_display);
-    font-size: 1.125rem;
+    font-size: 1.35rem;
     max-width: 500px;
   }
 
@@ -84,13 +87,13 @@ console.log(data);
   .faq {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: var(--spacing_9);
     justify-content: center;
   }
 
   .faqlist {
     display: grid;
-    gap: 1rem;
+    gap: var(--spacing_7);
   }
 
   li {
