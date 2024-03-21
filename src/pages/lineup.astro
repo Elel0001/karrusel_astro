@@ -66,6 +66,8 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
   .poster {
     background: url(/img/checkers.webp);
     padding: var(--spacing_11) var(--spacing_4);
+    position: relative;
+    z-index: 2;
   }
   div {
     display: grid;
@@ -90,22 +92,34 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     justify-content: center;
     margin: var(--spacing_7);
   }
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    overflow: hidden;
+  }
+
+  .blob_1 {
+    position: absolute;
+    z-index: 0;
+    rotate: 132deg;
+    width: 200%;
+    top: 45%;
+    left: -65%;
+  }
   @media (min-width: 800px) {
     .artists,
     .table {
       margin: 0 var(--spacing_12);
     }
-  }
-
-  .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  .blob_1 {
-    position: absolute;
-    z-index: 0;
-    top: 36%;
+    .blob_1 {
+      position: absolute;
+      z-index: 0;
+      rotate: 0deg;
+      width: 100%;
+      top: 16%;
+      left: 0%;
+    }
   }
 </style>

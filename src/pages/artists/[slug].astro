@@ -58,7 +58,9 @@ console.log(myData);
       </article>
     </div>
   </section>
-  <!-- <img src="/svg/blob_single.svg" alt="blob" class="blob_pos" /> -->
+  <div class="background">
+    <img class="blob_1" src="/svg/blob_single.svg" alt="blob" />
+  </div>
 </SingleLayout>
 <style>
   .flex_row {
@@ -117,16 +119,21 @@ console.log(myData);
   .icon {
     width: 30px;
   }
-
-  .blob_pos {
+  .background {
     position: absolute;
-    z-index: 0;
-    top: 10%;
-    left: -80%;
-    width: 250%;
-    rotate: 125deg;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 
+  .blob_1 {
+    position: absolute;
+    z-index: 0;
+    rotate: 130deg;
+    width: 200%;
+    top: 16%;
+    left: -43%;
+  }
   @media (min-width: 800px) {
     section {
       margin: var(--spacing_7) var(--spacing_13);
@@ -148,6 +155,15 @@ console.log(myData);
 
     .about_social {
       align-items: start;
+    }
+
+    .blob_1 {
+      position: absolute;
+      z-index: 0;
+      rotate: 20deg;
+      width: 50%;
+      top: 16%;
+      left: 0%;
     }
   }
 </style>
