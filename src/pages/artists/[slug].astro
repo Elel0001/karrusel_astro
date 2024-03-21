@@ -4,7 +4,9 @@ import SingleLayout from "../../layouts/SingleLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import Blob from "../../components/Blob.astro";
 
+// Laver statiske stier til hvert element i databasen
 export async function getStaticPaths() {
+  // Henter dataen med fetch
   const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
     method: "GET",
     headers: {
@@ -12,20 +14,25 @@ export async function getStaticPaths() {
     },
   }).then((res) => res.json());
 
+  //Benytter map til at lave en underside for hvert element i databasen
   return data.map((artist) => {
     return {
+      // Bruger slugget fra database (artist.slug) og navngiver filen dét
       // Det første 'slug' henviser til det slug, som er i mit filnavn (som er [slug].astro)
       // Det næste 'slug' henviser til en kolonne i databasen
       params: { slug: artist.slug },
+
       props: { myData: artist },
     };
   });
 }
 
+// Definere en prop, som dataen der er fetchet
 const { myData } = Astro.props;
 console.log(myData);
 ---
 
+<!---------------------------------------------------- HTML ----------------------------------------------------><!---------------------------------------------------- HTML ----------------------------------------------------><!---------------------------------------------------- HTML ----------------------------------------------------><!---------------------------------------------------- HTML ---------------------------------------------------->
 <SingleLayout title={myData.name}>
   <Breadcrumb link={myData.slug}>{myData.name}</Breadcrumb>
   <section class="layout">
@@ -62,7 +69,17 @@ console.log(myData);
     <img class="blob_1" src="/svg/blob_single.svg" alt="blob" />
   </div>
 </SingleLayout>
+
+<!---------------------------------------------------- CSS ---------------------------------------------------->
 <style>
+  /********** Basics på  sections  **********/
+  section {
+    gap: var(--spacing_8);
+    margin: var(--spacing_4);
+    z-index: 2;
+  }
+
+  /********** Generel flex  **********/
   .flex_row {
     display: flex;
     flex-direction: row;
@@ -71,17 +88,13 @@ console.log(myData);
     display: flex;
     flex-direction: column;
   }
+  /* Til flex der skal være anderledes i desktop */
   .layout {
     display: flex;
     flex-direction: column;
   }
 
-  section {
-    gap: var(--spacing_8);
-    margin: var(--spacing_4);
-    z-index: 2;
-  }
-
+  /********** Styling a delementer **********/
   div {
     gap: var(--spacing_5);
     align-items: center;
@@ -119,13 +132,14 @@ console.log(myData);
   .icon {
     width: 30px;
   }
+
+  /********** Blobber **********/
   .background {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
-
   .blob_1 {
     position: absolute;
     z-index: 0;
@@ -134,11 +148,12 @@ console.log(myData);
     top: 16%;
     left: -43%;
   }
+
+  /**************************************** DESKTOP ****************************************/
   @media (min-width: 800px) {
     section {
       margin: var(--spacing_7) var(--spacing_13);
     }
-
     .layout {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -148,9 +163,6 @@ console.log(myData);
     .play {
       grid-row: 1 / span 3;
       grid-column: 1 / span 1;
-    }
-
-    .info {
     }
 
     .about_social {
