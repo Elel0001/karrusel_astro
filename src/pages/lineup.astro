@@ -6,6 +6,7 @@ import CardArtist from "../components/CardArtist.astro";
 import Poster from "../components/Poster.astro";
 import Button from "../components/Button.astro";
 
+// Fetcher data fra databasen og ligger i konstanten 'data'
 const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
   method: "GET",
   headers: {
@@ -14,6 +15,7 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
 }).then((res) => res.json());
 ---
 
+<!---------------------------------------------------- HTML ----------------------------------------------------><!---------------------------------------------------- HTML ----------------------------------------------------><!---------------------------------------------------- HTML ----------------------------------------------------><!---------------------------------------------------- HTML ---------------------------------------------------->
 <MainLayout>
   <section class="poster">
     <Poster />
@@ -21,6 +23,8 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
 
   <section class="artists">
     <h2>Artists</h2>
+
+    <!-- Herter dataen for hvert element som er under 6, og laver et CardArtist med den -->
     <div>
       {
         data.map((artist, i) => {
@@ -30,6 +34,7 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
         })
       }
     </div>
+    <!-- Herter dataen for hvert element som er lig eller over 6, og laver et CardArtist med den, som ligger i en div, som ikke kan ses (pga class 'hide') -->
     <div class="extra hide">
       {
         data.map((artist, i) => {
@@ -39,15 +44,22 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
         })
       }
     </div>
+
     <div class="button">
       <Button type="secondary" hide="">View more</Button>
       <!-- <Button type="secondary" hide="extra hide">View less</Button> -->
     </div>
+
+    <!-- Script til interaktion på knap -->
     <script>
+      // Lytter efter click på knappen
       document.querySelector(".button").addEventListener("click", (event) => {
         let hiddenDiv = document.querySelector(".extra");
+        // Hvis knappen indeholder classen hide, så fjerne den denne class, så de bliver synlige
         if (hiddenDiv.classList.contains("hide")) {
           hiddenDiv.classList.remove("hide");
+
+          // Ellers tilføjer den classen hide, så kortene forsvinder igen (view less)
         } else {
           hiddenDiv.classList.add("hide");
         }
@@ -56,20 +68,31 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
   </section>
 
   <section class="table">
-    <!-- Table -->
+    <!-- Plads der er klar til det program vi ikke fik lavet ;) -->
   </section>
   <div class="background">
     <img class="blob_1" src="/svg/blob_single.svg" alt="blob" />
   </div>
 </MainLayout>
 
+<!---------------------------------------------------- CSS ---------------------------------------------------->
 <style>
+  /********** Basics på poster  **********/
   .poster {
     background: url(/img/checkers.webp);
     padding: var(--spacing_11) var(--spacing_4);
     position: relative;
     z-index: 2;
   }
+  /********** Basics på  sections  **********/
+  .artists,
+  .table {
+    margin: 0 var(--spacing_4);
+    position: relative;
+    z-index: 1;
+  }
+
+  /********** Grid til CardArtist **********/
   div {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -78,22 +101,17 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     margin-top: var(--spacing_4);
   }
 
-  .artists,
-  .table {
-    margin: 0 var(--spacing_4);
-    position: relative;
-    z-index: 1;
-  }
-  .hide {
-    display: none;
-  }
-
+  /********** Placering af knap + hide-class **********/
   .button {
     display: flex;
     justify-content: center;
     margin: var(--spacing_7);
   }
+  .hide {
+    display: none;
+  }
 
+  /********** Blobber **********/
   .background {
     position: absolute;
     width: 100%;
@@ -109,11 +127,15 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     top: 45%;
     left: -65%;
   }
+
+  /**************************************** DESKTOP ****************************************/
   @media (min-width: 800px) {
     .artists,
     .table {
       margin: 0 var(--spacing_12);
     }
+
+    /********** Blobber **********/
     .background {
       height: 100%;
     }
