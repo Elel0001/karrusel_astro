@@ -10,7 +10,7 @@ const { tickets, lineup, faq, about } = Astro.props;
   <nav>
     <ul class="menu">
       <li><Link link="/#" variant="main" page={tickets}>Tickets</Link></li>
-      <li><Link link="lineup" variant="main" page={lineup}>Line up</Link></li>
+      <li><Link link="/lineup" variant="main" page={lineup}>Line up</Link></li>
       <li><Link link="/faq" variant="main" page={faq}>FAQ</Link></li>
       <li><Link link="/#" variant="main" page={about}>About</Link></li>
     </ul>
@@ -29,6 +29,9 @@ const { tickets, lineup, faq, about } = Astro.props;
     align-items: center;
     padding: var(--spacing_4);
     background-color: var(--secondary_900);
+    position: sticky;
+    top: 0;
+    z-index: 5;
   }
 
   .logo {
@@ -48,7 +51,7 @@ const { tickets, lineup, faq, about } = Astro.props;
   }
 
   .menu li {
-    margin-right: var(--spacing_5);
+    margin-right: var(--spacing_9);
   }
 
   .menu li:last-child {
@@ -120,13 +123,15 @@ const { tickets, lineup, faq, about } = Astro.props;
     nav.active .menu {
       background-color: var(--secondary_900);
       position: absolute;
-      top: 70px;
+      top: 80px;
       left: 0;
       width: 100%;
-      z-index: 1;
+      height: 800px;
+      z-index: 5;
       display: flex;
       flex-direction: column;
       align-items: end;
+      gap: var(--spacing_4);
     }
 
     nav.active .menu li {

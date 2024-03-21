@@ -34,9 +34,13 @@ const { heading, button, link } = Astro.props;
   }
   @media (min-width: 800px) {
     article {
-      flex-direction: row;
-      justify-content: space-between;
-      padding: var(--spacing_9);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: var(--spacing_10);
+      gap: var(--spacing_11);
+    }
+    div {
+      margin-top: var(--spacing_5);
     }
   }
 </style>

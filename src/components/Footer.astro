@@ -3,28 +3,28 @@
 ---
 
 <footer>
-  <section class="footer">
+  <div class="flex_col">
     <div class="footer_col_karrusel">
       <h6>Karrusel Festival</h6>
       <p>Organised by Nus Nus <br />info@nusnus.dk</p>
     </div>
 
     <div>
-      <img src="img/footer_logo.svg" alt="logo" class="footer_logo" />
+      <img src="/img/footer_logo.svg" alt="logo" class="footer_logo" />
     </div>
+  </div>
 
-    <div class="social_flex">
-      <p>Follow us</p>
-      <div class="social_icon_flex">
-        <a href="https://www.instagram.com/">
-          <img src="img/instagram.svg" alt="Instagram Logo" class="icon_social" />
-        </a>
-        <a href="https://www.facebook.com/">
-          <img src="img/facebook.svg" alt="Facebook Logo" class="icon_social" />
-        </a>
-      </div>
+  <div class="social_flex">
+    <p>Follow us</p>
+    <div class="social_icon_flex">
+      <a href="https://www.instagram.com/">
+        <img src="/img/instagram.svg" alt="Instagram Logo" class="icon_social" />
+      </a>
+      <a href="https://www.facebook.com/">
+        <img src="/img/facebook.svg" alt="Facebook Logo" class="icon_social" />
+      </a>
     </div>
-  </section>
+  </div>
 </footer>
 
 <style>
@@ -38,14 +38,19 @@
     background-color: var(--secondary_900);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing_7);
-    padding: var(--spacing_4) 0 var(--spacing_4) var(--spacing_4);
+    align-items: center;
+    gap: var(--spacing_10);
+    padding: var(--spacing_4);
+    position: relative;
+    z-index: 5;
+    bottom: 0;
   }
 
-  .footer {
+  .flex_col {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing_7);
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .footer_col_karrusel {
@@ -80,16 +85,13 @@
   @media (min-width: 800px) {
     footer {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
       padding: var(--spacing_6) var(--spacing_12);
     }
 
-    .footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
+    .flex_col {
+      width: 53%;
     }
 
     .social_flex {

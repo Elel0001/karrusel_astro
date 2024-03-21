@@ -6,7 +6,7 @@ import CardArtist from "../components/CardArtist.astro";
 import Poster from "../components/Poster.astro";
 import Button from "../components/Button.astro";
 
-const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel?limit=6", {
+const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karrusel", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4ZnVyaGRoc2tjeGZsYnhzdHpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA1MDMzNTMsImV4cCI6MjAyNjA3OTM1M30.LOhTm5mG10QgwCONoiEr4awaIvHkbSl4G1wxOgPX4Mk",
@@ -23,14 +23,35 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     <h2>Artists</h2>
     <div>
       {
-        data.map((artist) => {
-          return <CardArtist data={artist} />;
+        data.map((artist, i) => {
+          if (i < 6) {
+            return <CardArtist data={artist} />;
+          }
+        })
+      }
+    </div>
+    <div class="extra hide">
+      {
+        data.map((artist, i) => {
+          if (i >= 6) {
+            return <CardArtist data={artist} />;
+          }
         })
       }
     </div>
     <div class="button">
-      <Button type="secondary" link="/#">Read more</Button>
+      <Button type="secondary">View more</Button>
     </div>
+    <script>
+      document.querySelector(".button").addEventListener("mousedown", (event) => {
+        let hiddenDiv = document.querySelector(".extra");
+        if (hiddenDiv.classList.contains("hide")) {
+          hiddenDiv.classList.remove("hide");
+        } else {
+          hiddenDiv.classList.add("hide");
+        }
+      });
+    </script>
   </section>
 
   <section class="table">
@@ -44,7 +65,7 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
 <style>
   .poster {
     background: url(/img/checkers.webp);
-    padding: var(--spacing_7) var(--spacing_4);
+    padding: var(--spacing_11) var(--spacing_4);
   }
   div {
     display: grid;
@@ -59,6 +80,9 @@ const data = await fetch("https://bxfurhdhskcxflbxstzf.supabase.co/rest/v1/karru
     margin: 0 var(--spacing_4);
     position: relative;
     z-index: 1;
+  }
+  .hide {
+    display: none;
   }
 
   .button {
