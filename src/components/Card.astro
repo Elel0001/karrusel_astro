@@ -5,6 +5,7 @@ import Accordion from "./Accordion.astro";
 const { heading, button, link } = Astro.props;
 ---
 
+<!---------------------------------------------------- HTML ---------------------------------------------------->
 <article>
   <Content heading={heading} button={button} link={link}> <slot /></Content>
 
@@ -15,6 +16,7 @@ const { heading, button, link } = Astro.props;
   </div>
 </article>
 
+<!---------------------------------------------------- CSS ---------------------------------------------------->
 <style>
   article {
     display: flex;
@@ -32,6 +34,8 @@ const { heading, button, link } = Astro.props;
     display: flex;
     flex-direction: column;
   }
+
+  /**************************************** DESKTOP ****************************************/
   @media (min-width: 800px) {
     article {
       display: grid;
