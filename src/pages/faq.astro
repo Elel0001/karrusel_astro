@@ -51,13 +51,85 @@ console.log(data);
     <img class="blob2" src="/svg/blob_single.svg" alt="blob" />
   </div>
 </MainLayout>
+
+<!------------------------------------------------------------------------ CSS --------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------ CSS --------------------------------------------------------------------------------->
+
 <style>
+  /*********** faqwrapper ***********/
   .faqwrapper {
     position: relative;
     z-index: 1;
     padding: var(--spacing_4);
   }
 
+  /* faqwrappers content - Padding */
+  .faqwrapper > * {
+    padding-top: var(--spacing_10);
+  }
+
+  /************** Header section **************/
+  .header p {
+    max-width: 500px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing_3);
+  }
+
+  /***************** FAQ Section **************/
+  .faq {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing_9);
+    justify-content: center;
+  }
+
+  /* Navigationsbar styling */
+  .navigationbar {
+    background-color: var(--secondary_900);
+    padding: var(--spacing_8);
+    border-radius: var(--radius_medium);
+    max-width: 20rem;
+  }
+
+  .navigationbar a {
+    color: var(--primary_50);
+    text-decoration: none;
+  }
+
+  .navigationbar h2 {
+    font-family: var(--font_display);
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+
+  ol {
+    list-style-type: none;
+    padding-left: var(--spacing_4);
+  }
+
+  li {
+    font-family: var(--font_body);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    max-width: 65ch;
+    color: var(--primary_50);
+  }
+
+  /* FAQ card - gap & margin */
+  .faqlist {
+    display: grid;
+    gap: var(--spacing_7);
+    margin-bottom: var(--spacing_11);
+  }
+
+  /*********** Blobber ***********/
   .background {
     position: absolute;
     width: 100%;
@@ -77,61 +149,12 @@ console.log(data);
     top: 10%;
     rotate: 200deg;
   }
-  .faqwrapper > * {
-    padding-top: var(--spacing_10);
-  }
-  .navigationbar {
-    background-color: var(--secondary_900);
-    padding: var(--spacing_8);
-    border-radius: var(--radius_medium);
-    max-width: 20rem;
-  }
-  .navigationbar a {
-    color: var(--primary_50);
-    text-decoration: none;
-  }
-  .navigationbar h2 {
-    font-family: var(--font_display);
-    font-size: 2.25rem;
-    font-weight: 400;
-  }
-  ol {
-    list-style-type: none;
-    padding-left: var(--spacing_4);
-  }
-  .header p {
-    max-width: 500px;
-  }
 
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing_3);
-  }
-  .faq {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing_9);
-    justify-content: center;
-  }
-
-  .faqlist {
-    display: grid;
-    gap: var(--spacing_7);
-    margin-bottom: var(--spacing_11);
-  }
-
-  li {
-    font-family: var(--font_body);
-    font-size: 20px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 150%;
-    max-width: 65ch;
-    color: var(--primary_50);
-  }
+  /********************************************************** Desk version **********************************************************/
   @media (min-width: 1000px) {
+    .faqwrapper > * {
+      padding-top: var(--spacing_11);
+    }
     .faq {
       grid-template-columns: 300px minmax(400px, 700px);
     }
@@ -148,10 +171,6 @@ console.log(data);
     .blob2 {
       top: 60%;
       rotate: 200deg;
-    }
-
-    .faqwrapper > * {
-      padding-top: var(--spacing_11);
     }
   }
 </style>
