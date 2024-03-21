@@ -16,31 +16,24 @@ import CountDown from "../components/CountDown.astro";
     </picture>
     <div class="wrapper">
       <div class="container">
-        <div class="list">
-          <div class="item">
-            <span class="item_txt">Karrusel Festival</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-            <span class="date">22.-24. Aug 2024</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-            <span class="item_txt">Karrusel Festival</span>
-            <img class="star" src="svg/star.svg" alt="star icon" />
-            <span class="date">22.-24. Aug 2024</span>
-          </div>
-        </div>
+        <p class="item_txt">Karrusel Festival</p>
+        <img class="star" src="svg/star.svg" alt="star icon" />
+        <p class="date">22.-24. Aug 2024</p>
+        <img class="star" src="svg/star.svg" alt="star icon" />
+        <p class="item_txt">Karrusel Festival</p>
+        <img class="star" src="svg/star.svg" alt="star icon" />
+        <p class="date">22.-24. Aug 2024</p>
+        <img class="star" src="svg/star.svg" alt="star icon" />
       </div>
       <div class="container">
-        <div class="list">
-          <div class="item">
-            <span class="item_txt">Karrusel Festival</span>
-            <img class="star" src="/svg/star.svg" alt="star icon" />
-            <span class="date">22.-24. Aug 2024</span>
-            <img class="star" src="/svg/star.svg" alt="star icon" />
-            <span class="item_txt">Karrusel Festival</span>
-            <img class="star" src="/svg/star.svg" alt="star icon" />
-            <span class="date">22.-24. Aug 2024</span>
-            <img class="star" src="/svg/star.svg" alt="star icon" />
-          </div>
-        </div>
+        <p class="item_txt">Karrusel Festival</p>
+        <img class="star" src="/svg/star.svg" alt="star icon" />
+        <p class="date">22.-24. Aug 2024</p>
+        <img class="star" src="/svg/star.svg" alt="star icon" />
+        <p class="item_txt">Karrusel Festival</p>
+        <img class="star" src="/svg/star.svg" alt="star icon" />
+        <p class="date">22.-24. Aug 2024</p>
+        <img class="star" src="/svg/star.svg" alt="star icon" />
       </div>
     </div>
 
@@ -118,19 +111,21 @@ import CountDown from "../components/CountDown.astro";
   /* Text der looper - container */
   .wrapper {
     position: absolute;
-    top: 250px;
+    top: 425px;
     width: 100%;
-    height: 60px;
+    height: 200px;
     overflow: hidden;
   }
   .container {
     display: flex;
     white-space: nowrap;
+    gap: 2rem;
+    align-items: center;
     -webkit-animation: loop 20s infinite linear;
     animation: loop 20s infinite linear;
     position: absolute;
     z-index: 3;
-    top: 18%;
+    top: 50%;
   }
 
   @keyframes loop {
@@ -143,10 +138,12 @@ import CountDown from "../components/CountDown.astro";
   .container:nth-child(2) {
     display: flex;
     white-space: nowrap;
+    gap: 2rem;
+    align-items: center;
     position: absolute;
     z-index: 3;
-    top: 18%;
-    left: 107%;
+    top: 50%;
+    left: 345%;
     -webkit-animation: loop_2 20s infinite linear;
     animation: loop_2 20s infinite linear;
   }
@@ -176,7 +173,7 @@ import CountDown from "../components/CountDown.astro";
     font-size: 1.875rem;
   }
   .star {
-    width: 40px;
+    width: 30px;
   }
 
   .button_primary {
@@ -185,6 +182,29 @@ import CountDown from "../components/CountDown.astro";
   }
 
   @media (min-width: 800px) {
+    .wrapper {
+      height: 200px;
+      top: 250px;
+    }
+    .container {
+      gap: 3rem;
+      top: 18%;
+    }
+    .container:nth-child(2) {
+      gap: 3rem;
+      top: 18%;
+      left: 154.1%;
+    }
+    .item_txt {
+      font-size: 6rem;
+    }
+    .date {
+      font-size: 3rem;
+    }
+    .star {
+      width: 35px;
+    }
+
     .hero_button {
       position: absolute;
       top: 16%;
