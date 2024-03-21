@@ -1,6 +1,9 @@
 <article>
   <h1>Line up</h1>
 
+  <!-- Hovedkunstnere -->
+  <!-- Hver 'flex_main er én række af kunstnere' -->
+  <!-- Mains desk, burges til at lave længere linjer i desktop -->
   <div class="mains">
     <div class="mains_desk">
       <div class="flex main">
@@ -9,6 +12,7 @@
         <p class="main">Ame</p>
       </div>
 
+      <!-- Denne stjene skjules på mobil -->
       <img src="/svg/star.svg" alt="star symbol" class="star_main hide_mob" />
 
       <div class="flex main">
@@ -24,6 +28,9 @@
     </div>
   </div>
 
+  <!-- (ikke hoved-) kunstnere -->
+  <!-- Hver 'flex_sub er én række af kunstnere' -->
+  <!-- Subs desk, burges til at lave længere linjer i desktop -->
   <div class="subs">
     <div class="subs_desk">
       <div class="flex sub">
@@ -32,6 +39,7 @@
         <p class="sub">Cockwhore & Macho</p>
       </div>
 
+      <!-- Denne stjene skjules på mobil -->
       <img src="/svg/star.svg" alt="star symbol" class="star_sub hide_mob" />
 
       <div class="flex sub">
@@ -54,6 +62,7 @@
         <p class="sub">VTSS</p>
       </div>
 
+      <!-- Denne stjene skjules på mobil -->
       <img src="/svg/star.svg" alt="star symbol" class="star_sub hide_mob" />
 
       <div class="flex sub">
@@ -72,6 +81,7 @@
         <p class="sub">Søren Skov</p>
       </div>
 
+      <!-- Denne stjene skjules på mobil -->
       <img src="/svg/star.svg" alt="star symbol" class="star_sub hide_mob" />
 
       <div class="flex sub">
@@ -88,6 +98,7 @@
         <p class="sub">Judith Van Waterkant</p>
       </div>
 
+      <!-- Denne stjene skjules på mobil -->
       <img src="/svg/star.svg" alt="star symbol" class="star_sub hide_mob" />
 
       <div class="flex sub">
@@ -109,7 +120,9 @@
   </div>
 </article>
 
+<!---------------------------------------------------- CSS ---------------------------------------------------->
 <style>
+  /********** Basics på  articles  **********/
   article {
     display: flex;
     flex-direction: column;
@@ -117,12 +130,15 @@
     align-items: center;
   }
 
+  /********** Generel flex  **********/
   .flex {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
+
+  /********** Styling af Mains  **********/
 
   .mains {
     display: flex;
@@ -137,6 +153,8 @@
   .star_main {
     width: 18px;
   }
+
+  /********** Styling af Subs  **********/
   .subs {
     display: flex;
     flex-direction: column;
@@ -151,14 +169,19 @@
     width: 12px;
   }
 
+  /********** Stjerne skjul  **********/
   .hide_mob {
     display: none;
   }
 
+  /**************************************** DESKTOP ****************************************/
   @media (min-width: 800px) {
+    /********** Viser stjerne  **********/
     .hide_mob {
       display: block;
     }
+
+    /********** Længere linjer til desktop  **********/
     .mains_desk {
       display: flex;
       flex-direction: row;
