@@ -9,11 +9,14 @@ const { question, answer, variant } = Astro.props;
   </div>
 </div>
 
+<!------------------------------------------------------------------------ CSS --------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------ CSS --------------------------------------------------------------------------------->
+
 <style>
   .accordion_item {
     border-bottom: 2px solid var(--primary_50);
   }
-  /* Accordion header - styling */
+
   .accordion_header {
     display: flex;
     justify-content: space-between;
@@ -25,7 +28,6 @@ const { question, answer, variant } = Astro.props;
     padding: var(--spacing_3);
   }
 
-  /* Content - vises ikke */
   .accordion_content {
     display: none;
     padding: var(--spacing_3);
@@ -35,7 +37,7 @@ const { question, answer, variant } = Astro.props;
     max-width: 85%;
   }
 
-  /* Pil styling og rotering */
+  /* Arrow - styling & rotation */
   .arrow {
     width: 25px;
     transition: transform 0.3s ease;
@@ -44,23 +46,20 @@ const { question, answer, variant } = Astro.props;
   .rotate {
     transform: rotate(180deg);
   }
-
-  .accordion_item {
-    border-bottom: 2px solid var(--primary_50);
-  }
 </style>
 
 <script>
   // Find alle accordion-elementer
   const accordionItems = document.querySelectorAll(".accordion_item");
 
-  // Tilføj klikhåndterer til hver accordion-item
+  // Der snakkes til hver accordion-item (header & arrow)
   accordionItems.forEach((item) => {
     const header = item.querySelector(".accordion_header");
     const arrow = item.querySelector(".arrow");
 
+    // Lyt efter et click på hver accordion-item (header & arrow)
     header.addEventListener("click", () => {
-      // Skjul alle accordion-indholdselementer
+      // Når der er klikket = Skjul alle accordion-indholdselementer
       accordionItems.forEach((accItem) => {
         const content = accItem.querySelector(".accordion_content") as HTMLElement;
         if (accItem !== item) {
