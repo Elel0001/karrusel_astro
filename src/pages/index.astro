@@ -9,7 +9,11 @@ import CountDown from "../components/CountDown.astro";
 
 <MainLayout>
   <section class="hero">
-    <img class="hero_img" src="/img/hero.webp" alt="hero image" />
+    <!-- <img class="hero_img" src="/img/hero.webp" alt="hero image" /> -->
+    <picture>
+      <source media="(min-width:800px)" srcset="/img/hero_desk.webp" class="hero_img" />
+      <img src="/img/hero_mobil.webp" alt="hero image" style="width: auto" class="hero_img" />
+    </picture>
     <div class="wrapper">
       <div class="container">
         <div class="list">
@@ -64,7 +68,12 @@ import CountDown from "../components/CountDown.astro";
     <CountDown number="42" unit="Mins" />
   </section>
   <section class="faq">
-    <Card heading="FAQ" button="Read more" link="/#"><p>Explore the Essentials: Your go-to guide for all things festival-related! Our Frequently Asked Questions (FAQ) page provides quick answers to common queries about transportation, access passes, facilities, and more. Have a question? Find it here or reach out for personalized assistance. We're dedicated to ensuring your festival experience is seamless and unforgettable!</p> </Card>
+    <Card heading="FAQ" button="Read more" link="/#"
+      ><p>
+        Explore the Essentials: Your go-to guide for all things festival-related! Our Frequently Asked Questions (FAQ) page provides quick answers to common queries about transportation, access passes, facilities, and more. Have a question? Find it here or reach out for personalized assistance.
+        We're dedicated to ensuring your festival experience is seamless and unforgettable!
+      </p>
+    </Card>
   </section>
 
   <div class="background">
