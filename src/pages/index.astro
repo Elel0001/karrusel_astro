@@ -81,13 +81,12 @@ import CountDown from "../components/CountDown.astro";
   .faq {
     margin: 0 var(--spacing_4);
   }
-  .hero {
-    margin: 0 1px;
-    overflow: hidden;
-  }
 
   /******** Hero section ********/
   /* Hero billede placering */
+  .hero {
+    overflow: hidden;
+  }
   .hero_img {
     position: relative;
     z-index: 1;
@@ -181,39 +180,6 @@ import CountDown from "../components/CountDown.astro";
     place-self: center;
   }
 
-  @media (min-width: 800px) {
-    .wrapper {
-      height: 200px;
-      top: 250px;
-    }
-    .container {
-      gap: 3rem;
-      top: 18%;
-    }
-    .container:nth-child(2) {
-      gap: 3rem;
-      top: 18%;
-      left: 154.1%;
-    }
-    .item_txt {
-      font-size: 6rem;
-    }
-    .date {
-      font-size: 3rem;
-    }
-    .star {
-      width: 35px;
-    }
-    .hero_but_row {
-      top: 18%;
-    }
-
-    .container,
-    .container:nth-child(2) {
-      top: 10%;
-    }
-  }
-
   /************* Section 2 ***********/
   .grid {
     display: flex;
@@ -278,12 +244,77 @@ import CountDown from "../components/CountDown.astro";
   .count_down {
     display: flex;
     flex-direction: row;
-    gap: var(--spacing_8);
+    gap: var(--spacing_7);
     justify-content: center;
   }
 
-  /* Section 2 i desk version */
+  /********************* Blobber ********************/
+
+  .grid,
+  .faq,
+  .count_down,
+  .poster {
+    position: relative;
+    z-index: 1;
+  }
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+  }
+  .blob_1 {
+    position: absolute;
+    z-index: 0;
+    rotate: 22deg;
+    width: 160%;
+    top: 120%;
+    left: -30%;
+  }
+
+  .blob_2 {
+    position: absolute;
+    z-index: 0;
+    rotate: 174deg;
+    width: 160%;
+    top: 260%;
+    left: -30%;
+  }
+
   @media (min-width: 800px) {
+    .wrapper {
+      height: 200px;
+      top: 250px;
+    }
+    .container {
+      gap: 3rem;
+      top: 18%;
+    }
+    .container:nth-child(2) {
+      gap: 3rem;
+      top: 18%;
+      left: 154.1%;
+    }
+    .item_txt {
+      font-size: 6rem;
+    }
+    .date {
+      font-size: 3rem;
+    }
+    .star {
+      width: 35px;
+    }
+    .hero_but_row {
+      top: 18%;
+    }
+
+    .container,
+    .container:nth-child(2) {
+      top: 10%;
+    }
+
+    /* Section 2 i desk version */
     .grid,
     .count_down,
     .faq {
@@ -315,35 +346,23 @@ import CountDown from "../components/CountDown.astro";
     .count_down {
       gap: 10%;
     }
-  }
 
-  /********************* Blobber ********************/
+    .blob_1 {
+      position: absolute;
+      z-index: 0;
+      rotate: 22deg;
+      width: 110%;
+      top: 25%;
+      left: -10%;
+    }
 
-  .grid,
-  .faq,
-  .count_down,
-  .poster {
-    position: relative;
-    z-index: 1;
-  }
-
-  .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  .blob_1 {
-    position: absolute;
-    z-index: 0;
-    top: 19%;
-    rotate: 22deg;
-  }
-
-  .blob_2 {
-    position: absolute;
-    z-index: 0;
-    top: 63%;
-    rotate: 14deg;
+    .blob_2 {
+      position: absolute;
+      z-index: 0;
+      rotate: 174deg;
+      width: 120%;
+      top: 61%;
+      left: -10%;
+    }
   }
 </style>
