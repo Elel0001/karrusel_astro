@@ -6,7 +6,7 @@ const { link } = Astro.props;
 <article>
   <Link link="/" variant="breadcrumb">Home</Link><p>/</p>
   <Link link="/lineup" variant="breadcrumb">Line Up</Link><p>/</p>
-  <Link link={link} variant="breadcrumb"><slot /></Link>
+  <Link link="/#" variant="breadcrumb"><slot /></Link>
 </article>
 
 <style>
