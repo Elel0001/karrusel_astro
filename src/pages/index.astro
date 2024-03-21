@@ -37,10 +37,10 @@ import CountDown from "../components/CountDown.astro";
       </div>
     </div>
 
-    <div class="hero_button">
+    <article class="hero_but_row">
       <Button type="primary" link="/#">Buy tickets</Button>
       <img class="hero_arrow" src="/img/arrow.svg" alt="pil" />
-    </div>
+    </article>
   </section>
 
   <section class="grid">
@@ -93,19 +93,19 @@ import CountDown from "../components/CountDown.astro";
     z-index: 1;
   }
 
-  .hero_button {
+  .hero_but_row {
     position: absolute;
     z-index: 3;
-    top: 30%;
-    left: 25%;
+    top: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
   }
 
   .hero_arrow {
-    position: absolute;
-    z-index: 3;
-    top: 333%;
-    left: 25%;
-    width: 95px;
+    width: 4rem;
   }
 
   /* Text der looper - container */
@@ -204,16 +204,8 @@ import CountDown from "../components/CountDown.astro";
     .star {
       width: 35px;
     }
-
-    .hero_button {
-      position: absolute;
-      top: 16%;
-      left: 25%;
-    }
-    .hero_arrow {
-      position: absolute;
+    .hero_but_row {
       top: 18%;
-      left: 25%;
     }
 
     .container,
