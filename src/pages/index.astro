@@ -38,7 +38,7 @@ import CountDown from "../components/CountDown.astro";
     </div>
 
     <article class="hero_but_row">
-      <Button type="primary" link="/#">Buy tickets</Button>
+      <Button type="primary" link="/#" hide="">Buy tickets</Button>
       <img class="hero_arrow" src="/img/arrow.svg" alt="pil" />
     </article>
   </section>
@@ -49,11 +49,11 @@ import CountDown from "../components/CountDown.astro";
       <h1>House, disco & techno</h1>
       <h3 class="txt_right">In the woods</h3>
     </article>
-    <Button type="secondary" link="/#">Read more</Button>
+    <Button type="secondary" link="/#" hide="">Read more</Button>
   </section>
   <section class="poster">
     <Poster />
-    <Button type="secondary" link="/lineup">Read more</Button>
+    <Button type="secondary" link="/lineup" hide="">Read more</Button>
   </section>
   <section class="count_down">
     <CountDown number="08" unit="Days" />
